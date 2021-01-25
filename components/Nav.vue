@@ -38,6 +38,7 @@
           href="https://www.twitter.com/jasen_michael/"
           target="_blank"
           aria-label="Jasen Michael Twitter link"
+          rel="noreferrer"
           ><IconTwitter
             class="items-center h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12 fill-current duration-200 transform hover:rotate-6 hover:scale-110 hover:text-blue-500"
           />
@@ -48,7 +49,7 @@
           href="https://www.instagram.com/jasen.michael/"
           target="_blank"
           aria-label="Jasen  Michael Instagram link"
-          class=""
+          rel="noreferrer"
           ><IconInstagram
             class="items-center h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12 fill-current duration-200 transform hover:rotate-6 hover:scale-110 hover:text-pink-700"
           />
@@ -59,6 +60,7 @@
           href="https://www.github.com/jasenmichael/"
           target="_blank"
           aria-label="Jasen  Michael Github link"
+          rel="noreferrer"
           ><IconGithub
             class="items-center h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12 fill-current duration-200 transform hover:rotate-6 hover:scale-110"
             :class="scrollY <= 16 ? 'hover:text-black' : 'hover:text-white'"
