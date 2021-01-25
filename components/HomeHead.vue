@@ -1,6 +1,6 @@
 <template>
   <div
-    class="pb-10 pt-32 px-4 md:pt-40 md:px-16 lg:px-40 lg:pt-48 overflow-hidden"
+    class="pb-10 px-4 md:px-16 lg:px-40 overflow-hidden"
     style="height: calc(100vh)"
   >
     <h1
