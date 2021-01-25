@@ -14,8 +14,6 @@
         <div class="text-6xl ml-1">&#62;</div>
       </div>
     </nuxt-link>
-    <!-- brand/logo -->
-    <!-- <pre class="pt-1">{{ scrollY }}</pre> -->
 
     <!-- pages/routes -->
     <ul
