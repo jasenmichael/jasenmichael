@@ -24,7 +24,9 @@
         :key="i"
         class="transform duration-300 ease-in-out hover:rotate-2 hover:scale-110 cursor-pointer hover:ring-1 hover:shadow-md ring-green-400 p-2 rounded-xl md:text-xl lg:text-3xl"
       >
-        {{ link }}
+        <nuxt-link :to="`/${link}`">
+          {{ link }}
+        </nuxt-link>
       </li>
     </ul>
 
@@ -92,7 +94,7 @@ export default {
   },
   data: () => {
     return {
-      links: ['Blog', 'Projects', 'Photos', 'Contact'],
+      links: ['blog', 'projects', 'photos', 'Contact'],
       scrollY: 0,
     }
   },
