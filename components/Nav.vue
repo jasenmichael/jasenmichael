@@ -78,13 +78,10 @@
 </template>
 
 <script>
-// import IconEmail from '@/assets/icons/email.svg?inline'
-// import IconFacebook from '@/assets/icons/facebook.svg?inline'
 import IconTwitter from '@/assets/icons/twitter.svg?inline'
 import IconInstagram from '@/assets/icons/instagram.svg?inline'
 import IconGithub from '@/assets/icons/github.svg?inline'
-// import IconLogo from '@/assets/jm-logo-2.svg?inline'
-import IconLogo from '@/assets/jm-hammer-icon.svg?inline'
+import IconLogo from '@/assets/jm-logo.svg?inline'
 
 export default {
   components: {
