@@ -2,6 +2,8 @@
 
 ## my personal website - built with Vue.js and Nuxt.js ❤️
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/31e20aa5-ce4b-4564-86c9-edbe6617256e/deploy-status)](https://app.netlify.com/sites/jasenmichael/deploys)
+
 ## Build Setup
 
 ```bash
