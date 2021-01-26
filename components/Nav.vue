@@ -6,12 +6,12 @@
     <!-- brand/logo -->
     <nuxt-link to="/">
       <div class="px-2 flex items-center">
-        <div class="text-6xl">&#60;</div>
+        <div class="text-6xl pb-1 md:pb-0">&#60;</div>
         <IconLogo
-          class="fill-current h-14 w-14 md:h-20 md:w-20 lg:h-24 lg:w-24"
+          class="fill-current h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20"
           :class="scrollY >= 16 ? 'text-green-300 ' : ''"
         />
-        <div class="text-6xl ml-1">&#62;</div>
+        <div class="text-6xl ml-1 pb-1 md:pb-0">&#62;</div>
       </div>
     </nuxt-link>
 
@@ -94,7 +94,7 @@ export default {
   },
   data: () => {
     return {
-      links: ['blog', 'projects', 'photos', 'Contact'],
+      links: ['blog', 'projects', 'photos', 'contact'],
       scrollY: 0,
     }
   },
