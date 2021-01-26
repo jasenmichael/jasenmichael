@@ -1,11 +1,6 @@
 <template>
   <div>
     <HomeHead v-if="$route.path === '/'" class="flex-grow" />
-
-    <!-- <div class="bg-gray-100 text-gray-900">yo</div> -->
-    <!-- <Gallery :images="images" /> -->
-    <Gallery />
-    <!-- <pre>{{ images }}</pre> -->
   </div>
 </template>
 
