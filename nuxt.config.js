@@ -22,7 +22,7 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/svg',
   ],
-  modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxt/content'],
+  modules: ['@nuxtjs/pwa', '@nuxt/content'],
   pwa: {
     manifest: {
       theme_color: '#111827',
