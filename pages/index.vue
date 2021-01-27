@@ -6,6 +6,17 @@
 
 <script>
 export default {
+  data: () => {
+    return {}
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    handleScroll() {
+      this.scrollY = window.scrollY
+    },
+  },
   // async asyncData() {
   //   const url =
   //     'https://esits.org/tumblr-json.php?url=https://beautiful-redheads.tumblr.com'
