@@ -22,6 +22,8 @@ module.exports = {
       animation: ['hover', 'focus'],
       zIndex: ['hover', 'active'],
       ringWidth: ['hover', 'active'],
+      transitionProperty: ['responsive', 'motion-safe', 'motion-reduce'],
+      transform: ['hover', 'focus'],
     },
   },
   plugins: [
