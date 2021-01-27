@@ -8,7 +8,7 @@
     >
       Hi, I'm Jasen
     </h1>
-    <div class="h-1/3 text-3xl md:text-4xl lg:text-6xl text-gray-300">
+    <div class="h-1/3 text-3xl md:text-4xl lg:text-6xl text-yellow-50">
       {{ currentLine }}
       <span>{{ curser ? '_' : '&nbsp;' }}</span>
     </div>
