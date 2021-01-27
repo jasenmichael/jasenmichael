@@ -1,89 +1,133 @@
 <template>
-  <nav
-    class="flex px-10 md:px-12 lg:px-24 items-center w-screen z-50 fixed transition-all duration-500"
-    :class="scrollY <= 16 ? ' light py-4' : 'py-0 dark'"
-  >
-    <!-- brand/logo -->
-    <nuxt-link to="/">
-      <div class="px-2 flex items-center">
-        <div class="text-6xl pb-1 md:pb-0">&#60;</div>
-        <IconLogo
-          class="fill-current h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20"
-          :class="scrollY >= 16 ? 'text-green-300 ' : ''"
-        />
-        <div class="text-6xl ml-1 pb-1 md:pb-0">&#62;</div>
-      </div>
-    </nuxt-link>
-
-    <!-- pages/routes -->
-    <ul
-      class="hidden md:flex font-semibold tracking-tight uppercase md:text-lg items-center ml-auto space-x-2"
+  <div>
+    <nav
+      class="flex px-10 md:px-12 lg:px-24 items-center w-screen z-50 fixed transition-all duration-500 border-b-4 border-red-900"
+      :class="scrollY <= 12 ? 'dark ' : 'light shadow-md'"
     >
-      <li
-        v-for="(link, i) in links"
-        :key="i"
-        class="transform duration-300 ease-in-out hover:rotate-2 hover:scale-110 cursor-pointer hover:ring-1 hover:shadow-md ring-green-400 p-2 rounded-xl md:text-xl lg:text-3xl"
+      <!-- brand/logo -->
+      <nuxt-link to="/">
+        <div class="px-2 flex items-center">
+          <div class="text-6xl mb-1">&#60;</div>
+          <IconLogo
+            class="text-green-500 bg-clip-text fill-current h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20"
+          />
+          <div class="text-6xl ml-1 mb-1">&#62;</div>
+        </div>
+      </nuxt-link>
+
+      <!-- md pages/routes -->
+      <ul
+        class="hidden md:flex font-semibold tracking-tight uppercase items-center ml-auto space-x-2"
       >
-        <nuxt-link :to="`/${link}`">
-          {{ link }}
-        </nuxt-link>
-      </li>
-    </ul>
+        <li
+          v-for="(link, i) in links"
+          :key="i"
+          class="transform duration-300 ease-in-out hover:rotate-2 hover:scale-110 cursor-pointer hover:ring-1 hover:shadow-md ring-green-400 p-2 rounded-xl md:text-xl lg:text-2xl xl:text-4xl"
+        >
+          <nuxt-link :to="`/${link}`">
+            {{ link }}
+          </nuxt-link>
+        </li>
+      </ul>
 
-    <!-- social -->
-    <ul
-      class="flex items-center ml-auto md:ml-4 space-x-2 md:space-x-4"
-      :class="scrollY >= 16 && 'text-green-300'"
-    >
-      <li>
-        <a
-          href="https://www.twitter.com/jasen_michael/"
-          target="_blank"
-          aria-label="Jasen Michael Twitter link"
-          rel="noreferrer"
-          ><IconTwitter
-            class="items-center h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12 fill-current duration-200 transform hover:rotate-6 hover:scale-110 hover:text-blue-500"
-          />
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://www.instagram.com/jasen.michael/"
-          target="_blank"
-          aria-label="Jasen  Michael Instagram link"
-          rel="noreferrer"
-          ><IconInstagram
-            class="items-center h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12 fill-current duration-200 transform hover:rotate-6 hover:scale-110 hover:text-pink-700"
-          />
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://www.github.com/jasenmichael/"
-          target="_blank"
-          aria-label="Jasen  Michael Github link"
-          rel="noreferrer"
-          ><IconGithub
-            class="items-center h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12 fill-current duration-200 transform hover:rotate-6 hover:scale-110"
-            :class="scrollY <= 16 ? 'hover:text-black' : 'hover:text-white'"
-          />
-        </a>
-      </li>
-    </ul>
-    <!-- hamburger menu -->
-    <div class="md:hidden ml-4 tham tham-e-squeeze tham-w-8">
-      <div class="tham-box">
-        <div class="bg-current tham-inner" />
+      <!-- mobile side panel pages/routes -->
+      <aside
+        class="md:hidden transform top-16 right-0 w-56 bg-gray-800 border-t-4 border-red-900 fixed h-full overflow-auto ease-in-out transition-all duration-400 z-30"
+        :class="isOpen ? 'translate-x-0' : 'translate-x-full '"
+      >
+        <div class="border-l-4 border-green-400 w-full h-full space-y-2">
+          <div
+            v-for="(link, i) in links"
+            :key="i"
+            class="flex flex-col uppercase font-black transform duration-300 ease-in-out text-gray-100 hover:bg-yellow-50 hover:text-gray-900 cursor-pointer py-2 mx-1 px-2 text-2xl"
+            @click="isOpen = false"
+          >
+            <nuxt-link :to="`/${link}`" @click="isOpen = false">
+              {{ link }}
+            </nuxt-link>
+          </div>
+        </div>
+      </aside>
+
+      <!-- social -->
+      <ul
+        class="flex items-center ml-auto md:ml-4 space-x-2 md:space-x-4"
+        :class="scrollY >= 12 ? 'text-gray-700' : 'text-green-300'"
+      >
+        <li>
+          <a
+            href="https://www.twitter.com/jasen_michael/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Jasen Michael Twitter link"
+            @click="isOpen = false"
+            ><IconTwitter
+              class="items-center h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12 xl:h-14 xl:w-14 fill-current duration-200 transform hover:rotate-6 hover:scale-110 hover:text-blue-500"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/jasen.michael/"
+            aria-label="Jasen  Michael Instagram link"
+            rel="noreferrer"
+            target="_blank"
+            @click="isOpen = false"
+            ><IconInstagram
+              class="items-center h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12 xl:h-14 xl:w-14 fill-current duration-200 transform hover:rotate-6 hover:scale-110 hover:text-pink-700"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.github.com/jasenmichael/"
+            aria-label="Jasen  Michael Github link"
+            target="_blank"
+            rel="noreferrer"
+            @click="isOpen = false"
+            ><IconGithub
+              class="items-center h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12 xl:h-14 xl:w-14 fill-current duration-200 transform hover:rotate-6 hover:scale-110"
+              :class="scrollY <= 12 ? 'hover:text-white' : 'hover:text-black'"
+            />
+          </a>
+        </li>
+      </ul>
+      <!-- hamburger menu -->
+      <div
+        class="md:hidden ml-4 tham tham-e-squeeze tham-w-8"
+        :class="isOpen && 'tham-active'"
+        @click="isOpen = !isOpen"
+      >
+        <div class="tham-box">
+          <div class="bg-current tham-inner" />
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+    <!-- transparent layer for click to close menu -->
+    <transition
+      enter-active-class="ease-in-out duration-700"
+      enter-from-class="opacity-0"
+      enter-to-class="opacity-100"
+      leave-active-class="ease-in-out duration-500"
+      leave-from-class="opacity-100"
+      leave-to-class="opacity-0"
+    >
+      <button
+        v-show="isOpen"
+        class="md:hidden z-10 fixed w-screen h-screen inset cursor-default bg-black bg-opacity-70 transition-opacity"
+        aria-hidden="true"
+        @click="isOpen = false"
+      ></button>
+      <!-- :class="!isOpen ? 'hidden' : 'block'" -->
+    </transition>
+  </div>
 </template>
 
 <script>
 import IconTwitter from '@/assets/icons/twitter.svg?inline'
 import IconInstagram from '@/assets/icons/instagram.svg?inline'
 import IconGithub from '@/assets/icons/github.svg?inline'
-import IconLogo from '@/assets/jm-logo.svg?inline'
+import IconLogo from '@/assets/jm-logo2.svg?inline'
 
 export default {
   components: {
@@ -96,6 +140,7 @@ export default {
     return {
       links: ['blog', 'projects', 'photos', 'contact'],
       scrollY: 0,
+      isOpen: false,
     }
   },
   mounted() {
