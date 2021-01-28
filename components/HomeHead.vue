@@ -49,21 +49,21 @@
               <!-- <path
                   d="M17.104 5.072l-4.138-4.014L14.056 0l6 5.82-6 5.82-1.09-1.057 4.138-4.014H0V5.072h17.104z"
                 ></path> -->
-              <svg viewBox="0 0 193.5 116" class="text-red-700">
+              <svg viewBox="0 0 193.5 116" class="">
                 <circle
-                  class="eye pupil"
+                  class="eye pupil text-red-700 fill-current"
                   :class="isHovering && 'pupil--open'"
                   cx="96.8"
                   cy="58"
                   r="24"
                 />
                 <path
-                  class="eye"
+                  class="eye text-red-700 fill-current"
                   :class="isHovering && 'lid lid--open'"
                   d="M5,58L5,58C23.4,26.3,57.6,5,96.8,5c39.3,0,73.8,21.3,91.8,53l0,0c0,0-26.7,53-91.8,53S5,58,5,58z"
                 />
                 <path
-                  class="eye"
+                  class="eye text-red-700 fill-current"
                   :class="isHovering && 'lid lid--close'"
                   d="M5,58L5,58C23.4,26.3,57.6,5,96.8,5c39.3,0,73.8,21.3,91.8,53l0,0c0,0-26.7,53-91.8,53S5,58,5,58z"
                 />
