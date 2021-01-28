@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav
-      class="flex px-10 md:px-12 lg:px-24 items-center w-screen z-50 fixed transition-all duration-500 border-b-4 border-red-900"
+      class="flex px-4 md:px-16 lg:px-40 items-center w-screen z-50 fixed transition-all duration-500 border-b-4 border-red-900"
       :class="scrollY <= 12 ? 'dark ' : 'light shadow-md'"
     >
       <!-- brand/logo -->
@@ -138,7 +138,7 @@ export default {
   },
   data: () => {
     return {
-      links: ['blog', 'projects', 'photos', 'contact'],
+      links: ['blog', 'creations', 'photos', 'contact'],
       scrollY: 0,
       isOpen: false,
     }
