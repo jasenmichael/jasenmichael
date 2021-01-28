@@ -15,6 +15,11 @@ module.exports = {
       scale: {
         101: '1.01',
       },
+      transitionProperty: {
+        height: 'height',
+
+        spacing: 'margin, padding',
+      },
     },
   },
   variants: {
@@ -24,6 +29,8 @@ module.exports = {
       ringWidth: ['hover', 'active'],
       transitionProperty: ['responsive'],
       transform: ['hover', 'focus'],
+      visibility: ['hover', 'focus'],
+      display: ['hover'],
     },
   },
   plugins: [
