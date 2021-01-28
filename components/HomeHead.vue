@@ -129,9 +129,9 @@ export default {
     }
   },
   mounted() {
-    setTimeout(() => {
-      this.done = true
-    }, 1000)
+    // setTimeout(() => {
+    //   this.done = true
+    // }, 1000)
     this.flashCurser()
     this.text = this.lines[0]
     this.typeWriter(this.text)
