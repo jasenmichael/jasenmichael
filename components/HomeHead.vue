@@ -22,38 +22,65 @@
         @mouseover="isHovering = true"
         @mouseout="isHovering = false"
       >
-        <div
-          v-if="done"
-          v-smooth-scroll="{ duration: 700 }"
-          href="#homeabout"
-          class="block p-7 relative transition-all ease-in-out duration-700"
+        <transition
+          enter-active-class="duration-800 ease-in-out"
+          enter-class="-translate-x-full opacity-0"
+          enter-to-class="-translate-x-0 opacity-100"
+          leave-active-class="duration-800 ease-in"
+          leave-class="translate-x-0 opacity-100"
+          leave-to-class="translate-x-full opacity-0"
+          mode="out-in"
         >
-          <span
-            class="btn__circle absolute ring-offset-green-700 ring-4 ring-green-700"
-          ></span>
-          <span class="h-12 w-12 btn__white-circle absolute bg-red-700">
-            <svg
-              id="icon-arrow-right"
-              class="w-8 h-8 text-green-400 fill-current"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 21 12"
+          <div
+            v-if="done"
+            v-smooth-scroll="{ duration: 700 }"
+            href="#homeabout"
+            class="block p-7 relative transition-all transform duration-700"
+          >
+            <span
+              class="btn__circle absolute ring-offset-green-700 ring-4 ring-green-700"
+            ></span>
+            <span class="h-14 w-14 btn__white-circle absolute bg-gray-900">
+              <!-- <svg
+                class="w-8 h-8 text-green-400 fill-current"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 21 12"
+              > -->
+              <!-- <path
+                  d="M17.104 5.072l-4.138-4.014L14.056 0l6 5.82-6 5.82-1.09-1.057 4.138-4.014H0V5.072h17.104z"
+                ></path> -->
+              <svg viewBox="0 0 193.5 116" class="text-red-700">
+                <circle
+                  class="eye pupil"
+                  :class="isHovering && 'pupil--open'"
+                  cx="96.8"
+                  cy="58"
+                  r="24"
+                />
+                <path
+                  class="eye"
+                  :class="isHovering && 'lid lid--open'"
+                  d="M5,58L5,58C23.4,26.3,57.6,5,96.8,5c39.3,0,73.8,21.3,91.8,53l0,0c0,0-26.7,53-91.8,53S5,58,5,58z"
+                />
+                <path
+                  class="eye"
+                  :class="isHovering && 'lid lid--close'"
+                  d="M5,58L5,58C23.4,26.3,57.6,5,96.8,5c39.3,0,73.8,21.3,91.8,53l0,0c0,0-26.7,53-91.8,53S5,58,5,58z"
+                />
+              </svg>
+            </span>
+            <span
+              class="btn__text absolute z-50 text-shadow text-xl sm:text-2xl md:text-3xl lg:text-4xl"
+              :class="
+                !isHovering
+                  ? 'text-yellow-100 animate-pulse'
+                  : 'text-green-400 animate-none'
+              "
             >
-              <path
-                d="M17.104 5.072l-4.138-4.014L14.056 0l6 5.82-6 5.82-1.09-1.057 4.138-4.014H0V5.072h17.104z"
-              ></path>
-            </svg>
-          </span>
-          <span
-            class="btn__text absolute z-50 text-shadow text-xl sm:text-2xl md:text-3xl lg:text-4xl"
-            :class="
-              !isHovering
-                ? 'text-yellow-100 animate-pulse'
-                : 'text-green-400 animate-none'
-            "
-          >
-            More...</span
-          >
-        </div>
+              More...</span
+            >
+          </div>
+        </transition>
       </div>
 
       <!-- eye button -->
@@ -129,9 +156,9 @@ export default {
     }
   },
   mounted() {
-    // setTimeout(() => {
-    //   this.done = true
-    // }, 1000)
+    setTimeout(() => {
+      this.done = true
+    }, 1000)
     this.flashCurser()
     this.text = this.lines[0]
     this.typeWriter(this.text)
@@ -265,20 +292,21 @@ export default {
   transform: translate(1rem, -50%);
 }
 
-/* .eye {
+.eye {
   fill: none;
-
   stroke: currentColor;
   stroke-width: 10;
   stroke-miterlimit: 10;
   stroke-linecap: round;
 }
 
+/* 
 svg {
   display: block;
   margin: 35px auto;
   width: 70px;
 }
+*/
 
 .lid {
   stroke-dasharray: 222;
@@ -301,17 +329,19 @@ svg {
 }
 
 .lid--close {
-  animation: lid--close 0.5s ease-in-out forwards;
+  animation: lid--close 1s ease-in-out forwards;
 }
+
 .lid--open {
-  animation: lid--open 0.5s ease-in-out forwards;
+  animation: lid--open 1s ease-in-out forwards;
 }
 
 .pupil--close {
-  animation: pupil--close 0.5s ease-in-out forwards;
+  animation: pupil--close 1s ease-in-out forwards;
 }
+
 .pupil--open {
-  animation: pupil--open 0.5s ease-in-out forwards;
+  animation: pupil--open 1s ease-in-out forwards;
 }
 
 @keyframes lid--close {
@@ -347,6 +377,6 @@ svg {
   }
   to {
     stroke-dashoffset: -300;
-  } 
-}  */
+  }
+}
 </style>
