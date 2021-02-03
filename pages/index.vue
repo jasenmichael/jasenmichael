@@ -1,6 +1,6 @@
 <template>
   <div class="flex-grow">
     <HomeHead />
-    <HomeAbout />
+    <About />
   </div>
 </template>

@@ -37,5 +37,6 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('tailwindcss-textshadow'),
     require('tailwind-hamburgers'),
+    require('@tailwindcss/aspect-ratio'),
   ],
 }

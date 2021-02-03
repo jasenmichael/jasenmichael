@@ -41,14 +41,6 @@
               class="btn__circle absolute ring-offset-green-700 ring-4 ring-green-700"
             ></span>
             <span class="h-14 w-14 btn__white-circle absolute bg-gray-900">
-              <!-- <svg
-                class="w-8 h-8 text-green-400 fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 21 12"
-              > -->
-              <!-- <path
-                  d="M17.104 5.072l-4.138-4.014L14.056 0l6 5.82-6 5.82-1.09-1.057 4.138-4.014H0V5.072h17.104z"
-                ></path> -->
               <svg viewBox="0 0 193.5 116" class="">
                 <circle
                   class="eye pupil text-red-700 fill-current"

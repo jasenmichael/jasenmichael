@@ -25,8 +25,16 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 todo:
 
-- [ ] crete page schemas
-- [ ] crete siteData schema
+complete about
+complete blog
+implement auth
+implement cms
+create sitemap
+connect sitemap to zapier
+
+
+- [ ] create page schemas
+- [ ] create siteData schema
   - [ ] profile
   - [ ] title
   - [ ] description
@@ -48,8 +56,7 @@ todo:
   - [ ] dns stuff for domain
 
 to add features:
-
-- cloudinary
+- [ ] cloudinary
   - origin only
 - site cross posting?
   - jm - personal, tech, non-profit, building
@@ -102,10 +109,7 @@ photos
 
 sites:
 jasenmichael
-
 - header
--
-
 - https://jobs.dorfjungs.com/
 
 tech512
