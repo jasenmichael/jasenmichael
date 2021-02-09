@@ -41,7 +41,8 @@ export default {
         }
 
         const { $content } = require('@nuxt/content')
-        const baseUrl = 'https://jasenmichael.com'
+        // const baseUrl = 'https://jasenmichael.com'
+        const baseUrl = 'https://jasenmichael.netlify.app'
         // blogs
         const blogs = await $content('blog')
           .only([
@@ -70,7 +71,7 @@ export default {
             // <content:encoded>
             content: JSON.stringify(blog),
             // <enclosure type="image/jpg">
-            image: baseUrl + '/blog/' + blog.cover,
+            image: baseUrl + blog.cover,
             // <pubDate>
             date: new Date(blog.createdAt),
           })
