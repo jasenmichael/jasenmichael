@@ -31,7 +31,7 @@ export default {
   feed: [
     // A default feed configuration object
     {
-      path: '/feed.xml', // The route to your feed.
+      path: '/blog-feed.xml', // The route to your feed.
       async create(feed) {
         feed.options = {
           generator: 'nuxtjs/feed',
