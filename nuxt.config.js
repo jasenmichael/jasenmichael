@@ -22,7 +22,7 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/svg',
   ],
-  modules: ['@nuxtjs/pwa', '@nuxt/content', '@nuxtjs/feed'],
+  modules: ['@nuxtjs/pwa', '@nuxt/content', '@nuxtjs/feed', '@nuxtjs/svg'],
   pwa: {
     manifest: {
       theme_color: '#111827',
@@ -34,64 +34,50 @@ export default {
       path: '/feed.xml', // The route to your feed.
       async create(feed) {
         feed.options = {
-          generator: '',
-          title: 'My blog',
-          link: 'https://lichter.io/feed.xml',
-          description: 'This is my personal feed!',
+          generator: 'nuxtjs/feed',
+          title: 'Jasen Michael Blog',
+          link: 'https://jasenmichael.com/blog-feed.xml',
+          description: 'Jasen Michael blog feed!',
         }
 
         const { $content } = require('@nuxt/content')
-        const posts = await $content('blog').fetch()
-        posts.forEach((post) => {
+        const baseUrl = 'https://jasenmichael.com'
+        // blogs
+        const blogs = await $content('blog')
+          .only([
+            'title',
+            'slug',
+            'category',
+            'description',
+            'link',
+            'tags',
+            'img',
+            'createdAt',
+            'author',
+            'cover',
+          ])
+          .sortBy('date', 'asc')
+          .fetch()
+        blogs.forEach((blog) => {
           feed.addItem({
-            title: post.title,
-            id: post.category,
-            link: post.link,
-            description: post.description,
-            content: post.content,
-            image: post.link + post.img,
-            category: post.category,
-            tags: ['yo', 'wazzuh'],
-            data: 'Some additional data',
-            date: new Date(post.createdAt),
-            author: [
-              {
-                name: 'Jane Doe',
-                email: 'janedoe@example.com',
-                link: 'https://example.com/janedoe',
-              },
-              {
-                name: 'Joe Smith',
-                email: 'joesmith@example.com',
-                link: 'https://example.com/joesmith',
-              },
-            ],
-            contributor: [
-              {
-                name: 'Shawn Kemp',
-                email: 'shawnkemp@example.com',
-                link: 'https://example.com/shawnkemp',
-              },
-              {
-                name: 'Reggie Miller',
-                email: 'reggiemiller@example.com',
-                link: 'https://example.com/reggiemiller',
-              },
-            ],
+            // <title>
+            title: blog.title,
+            //  <uuid>
+            id: blog.slug,
+            //  <link>
+            link: baseUrl + '/blog/' + blog.slug,
+            description: blog.description,
+            // <content:encoded>
+            content: JSON.stringify(blog),
+            // <enclosure type="image/jpg">
+            image: baseUrl + '/blog/' + blog.cover,
+            // <pubDate>
+            date: new Date(blog.createdAt),
           })
-        })
-
-        // feed.addCategory('Nuxt.js')
-
-        feed.addContributor({
-          name: 'Alexander Lichter',
-          email: 'example@lichter.io',
-          link: 'https://lichter.io/',
         })
       },
       cacheTime: 1000 * 60 * 15,
       type: 'rss2', // Can be: rss2, atom1, json1
-      data: ['Some additional data'], // Will be passed as 2nd argument to `create` function
     },
   ],
   axios: {},

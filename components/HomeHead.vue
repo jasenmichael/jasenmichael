@@ -15,10 +15,40 @@
           <span>{{ curser ? '_' : '&nbsp;' }}</span>
         </div>
       </div>
-
+      <!-- 
+      <div class="h-32">
+        <transition
+          enter-active-class="duration-1000 ease-in-out"
+          enter-class="-translate-x-full opacity-0"
+          enter-to-class="-translate-x-0 opacity-100"
+          leave-active-class="duration-1000 ease-in"
+          leave-class="translate-x-0 opacity-100"
+          leave-to-class="translate-x-full opacity-0"
+          mode="out-in"
+        >
+          <div
+            v-if="done"
+            class="flex mx-auto items-center justify-center text-2xl space-x-6 trasnform-all transition-all duration-1000"
+          >
+            <nuxt-link
+              to="/bio"
+              class="border-green-300 rounded-md border-2 py-2 px-4 w-40 text-center"
+            >
+              Bio
+            </nuxt-link>
+            <nuxt-link
+              to="/resume"
+              class="border-green-300 rounded-md border-2 py-2 px-4 w-40 text-center"
+            >
+              Resume
+            </nuxt-link>
+          </div>
+        </transition>
+      </div> -->
       <!-- more btn -->
-      <div
-        class="btn w-16 h-16 flex mx-auto pr-20 items-center justify-center cursor-pointer"
+      <!-- class="btn w-16 h-16 flex mx-auto pr-20 items-center justify-center cursor-pointer" -->
+      <!-- <div
+        class="w-full h-full"
         @mouseover="isHovering = true"
         @mouseout="isHovering = false"
       >
@@ -31,6 +61,7 @@
           leave-to-class="translate-x-full opacity-0"
           mode="out-in"
         >
+          <About />
           <div
             v-if="done"
             v-smooth-scroll="{ duration: 700 }"
@@ -73,53 +104,6 @@
             >
           </div>
         </transition>
-      </div>
-
-      <!-- eye button -->
-      <!-- <div
-        class="w-20 h-20 mx-auto flex items-center justify-center"
-        @mouseover="isHovering = true"
-        @mouseout="isHovering = false"
-      >
-        <a
-          v-show="done"
-          v-smooth-scroll="{ duration: 1000 }"
-          href="#homeabout"
-          class="bg-clip-text cursor-pointer"
-        >
-          <div
-            class="flex flex-col items-center transition-all text-green-200 hover:text-red-800 duration-700 ease-in-out transform translate-y-1 opacity-100 animate-pulse hover:animate-none"
-          >
-            <div :class="isHovering ? 'block' : 'hidden'">
-              <svg viewBox="0 0 193.5 116">
-                <circle
-                  class="eye pupil pupil--open"
-                  cx="96.8"
-                  cy="58"
-                  r="24"
-                />
-                <path
-                  class="eye lid lid--open"
-                  d="M5,58L5,58C23.4,26.3,57.6,5,96.8,5c39.3,0,73.8,21.3,91.8,53l0,0c0,0-26.7,53-91.8,53S5,58,5,58z"
-                />
-              </svg>
-            </div>
-            <div class="" :class="isHovering && 'hidden'">
-              <svg viewBox="0 0 193.5 116">
-                <circle
-                  class="eye pupil pupil--close"
-                  cx="96.8"
-                  cy="58"
-                  r="24"
-                />
-                <path
-                  class="eye lid lid--close"
-                  d="M5,58L5,58C23.4,26.3,57.6,5,96.8,5c39.3,0,73.8,21.3,91.8,53l0,0c0,0-26.7,53-91.8,53S5,58,5,58z"
-                />
-              </svg>
-            </div>
-          </div>
-        </a>
       </div> -->
     </div>
   </div>
@@ -148,9 +132,9 @@ export default {
     }
   },
   mounted() {
-    // setTimeout(() => {
-    //   this.done = true
-    // }, 1000)
+    setTimeout(() => {
+      this.done = true
+    }, 1000)
     this.flashCurser()
     this.text = this.lines[0]
     this.typeWriter(this.text)

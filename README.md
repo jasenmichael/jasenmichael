@@ -25,13 +25,12 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 todo:
 
-complete about
-complete blog
-implement auth
-implement cms
-create sitemap
-connect sitemap to zapier
-
+- [ ] complete about
+- [ ] complete blog
+- [ ] implement auth
+- [ ] implement cms
+- [x] create sitemap
+- [ ] connect sitemap to zapier
 
 - [ ] create page schemas
 - [ ] create siteData schema
@@ -56,6 +55,7 @@ connect sitemap to zapier
   - [ ] dns stuff for domain
 
 to add features:
+
 - [ ] cloudinary
   - origin only
 - site cross posting?
@@ -109,6 +109,7 @@ photos
 
 sites:
 jasenmichael
+
 - header
 - https://jobs.dorfjungs.com/
 
