@@ -7,18 +7,35 @@
 
     <img
       class="h-48 w-full object-cover"
-      src="https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80"
+      :src="blog.cover || '/img/blog.jpg'"
       alt=""
     />
 
     <!-- card content -->
     <div class="flex-grow">
       <div class="flex flex-col mx-4 md:mx-6">
-        <div class="flex-1">
+        <div class="flex-1 pt-1">
           <!-- <div class="border"> -->
           <!-- category -->
-          <p class="text-sm font-medium text-green-700">
-            <a href="#" class="hover:underline"> {{ blog.category }} </a>
+          <p class="text-sm font-medium text-gray-800">
+            <span class="uppercase text-xs"> Category: </span>
+            <nuxt-link
+              :to="'/blog/?category=' + blog.category"
+              class="font-bold text-green-700 hover:underline"
+            >
+              {{ blog.category }}
+            </nuxt-link>
+            <br />
+            <span class="uppercase text-xs"> Tags:</span>
+            <nuxt-link
+              v-for="tag in blog.tags"
+              :key="tag"
+              :to="'/blog/?tag=' + tag"
+              class="font-bold text-green-700 hover:underline"
+            >
+              <span> #{{ tag }}</span>
+              <!-- {{ blog.tags.length && '#' + blog.tags.join(' #') }} -->
+            </nuxt-link>
           </p>
           <!-- title -->
           <a href="#" class="block mt-2 mb-auto">

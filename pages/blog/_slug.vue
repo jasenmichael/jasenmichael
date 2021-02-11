@@ -4,11 +4,8 @@
   >
     <div class="shadow-lg mb-6">
       <img
-        class="object-cover"
-        :src="
-          blog.cover ||
-          'https://source.unsplash.com/collection/1346951/1000x500?sig=1'
-        "
+        class="object-cover max-h-36 md:max-h-48 lg:max-h-64 w-screen rounded-t-lg"
+        :src="blog.cover || '/img/blog.jpg'"
       />
       <hr class="rounded-b-lg border-2 border-green-500" />
     </div>
@@ -40,7 +37,8 @@ export default {
   @apply text-yellow-100;
 }
 >>> .nuxt-content img {
-  @apply rounded-xl;
+  @apply rounded-lg;
+  @apply shadow-lg;
 }
 >>> .nuxt-content a {
   @apply text-yellow-300;

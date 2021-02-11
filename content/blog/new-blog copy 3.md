@@ -4,7 +4,7 @@ description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
   facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci
   tempora aut inventore optio animi., tempore temporibus quo
   laudantium.
-cover: /me.jpg
+cover: https://source.unsplash.com/collection/1346951/1000x500?sig=3
 category: technology
 tags: ['vue', 'nuxt', 'nuxt-content', 'netlify']
 author: jasenmichael

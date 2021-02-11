@@ -37,20 +37,21 @@
           :class="scrollY >= 12 ? 'text-gray-700' : 'text-green-300'"
         >
           <div>
-            <div
+            <a
               href="https://www.twitter.com/jasen_michael/"
               target="_blank"
               rel="noreferrer"
               aria-label="Jasen Michael Twitter link"
+              class="z-50"
               @click="isOpen = false"
             >
               <IconTwitter
                 class="items-center h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12 xl:h-14 xl:w-14 fill-current duration-200 transform hover:rotate-6 hover:scale-110 hover:text-blue-500"
               />
-            </div>
+            </a>
           </div>
           <div>
-            <div
+            <a
               href="https://www.instagram.com/jasen.michael/"
               aria-label="Jasen  Michael Instagram link"
               rel="noreferrer"
@@ -60,10 +61,10 @@
               <IconInstagram
                 class="items-center h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12 xl:h-14 xl:w-14 fill-current duration-200 transform hover:rotate-6 hover:scale-110 hover:text-pink-700"
               />
-            </div>
+            </a>
           </div>
           <div>
-            <div
+            <a
               href="https://www.github.com/jasenmichael/"
               aria-label="Jasen  Michael Github link"
               target="_blank"
@@ -74,7 +75,7 @@
                 class="items-center h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12 xl:h-14 xl:w-14 fill-current duration-200 transform hover:rotate-6 hover:scale-110"
                 :class="scrollY <= 12 ? 'hover:text-white' : 'hover:text-black'"
               />
-            </div>
+            </a>
           </div>
         </div>
       </div>

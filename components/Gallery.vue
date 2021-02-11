@@ -1,30 +1,37 @@
 <template>
   <div class="min-h-screen items-center bg-green-800">
     <div class="flex-1 md:px-2 py-2">
-      <div
-        class="grid md:gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid-flow-row-dense overflow-hidden"
+      <!-- <div> -->
+      <transition-group
+        name="fade"
+        mode="out-in"
+        class="grid md:gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid-flow-row-dense overflow-hidden transition-all duration-1000 ease-in-out"
       >
         <div
-          v-for="(image, i) in images"
-          :key="i"
+          v-for="(image, i) in loadedImages"
+          :key="i + 420"
           class="flex flex-cols items-center mx-auto w-full h-full"
           :class="image.view === 'landscape' && 'col-span-2'"
         >
           <img
+            v-if="image.loaded"
             v-lazy-load
             :data-src="
               $config.isDev
                 ? image.imgThumb
                 : `${$config.cloudinaryUrl}/${image.imgThumb}`
             "
-            loading="lazy"
-            alt="image"
-            class="w-full h-full object-cover opacity-75 hover:opacity-100 hover:shadow-md hover:z-30 hover:ring-2 hover:ring-gray-600 hover:scale-101 transform duration-500 ease-in-out"
+            alt=""
+            class="w-full h-full object-cover hover:opacity-100 hover:shadow-md hover:z-30 hover:ring-2 hover:ring-gray-600 hover:scale-101 transition-all duration-1000 ease-in-out"
+            :class="!image.loaded ? 'opacity-0' : 'opacity-75'"
           />
+          <div v-else class="w-full h-full bg-red-900"></div>
+          <!-- loading="lazy" -->
         </div>
-      </div>
+      </transition-group>
     </div>
   </div>
+  <!-- </div> -->
 </template>
 
 <script>
@@ -219,5 +226,44 @@ export default {
       },
     },
   },
+  data: () => {
+    return {
+      loadedImages: [],
+      timer: 400,
+    }
+  },
+  mounted() {
+    this.images.forEach((image, i) => {
+      setTimeout(() => {
+        this.loadedImages.push(image)
+        setTimeout(() => {
+          this.loadedImages[i].loaded = true
+        }, 200)
+      }, this.timer * i)
+    })
+  },
 }
 </script>
+
+<style>
+/* .isLoaded {
+  opacity: 0.75;
+}
+.notLoaded {
+  opacity: 0;
+} */
+
+.fade-in-enter-active {
+  transition: all 0.5s ease;
+}
+
+.fade-in-leave-active {
+  transition: all 0.5s ease;
+}
+
+.fade-in-enter,
+.fade-in-leave-to {
+  position: absolute;
+  opacity: 0;
+}
+</style>
