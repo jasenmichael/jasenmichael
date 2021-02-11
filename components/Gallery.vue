@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen items-center bg-green-800">
-    <div class="flex-1 md:px-2 pt-2">
+    <div class="flex-1 md:px-2 py-2">
       <div
         class="grid md:gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid-flow-row-dense overflow-hidden"
       >

@@ -46,65 +46,67 @@
         </transition>
       </div> -->
       <!-- more btn -->
-      <!-- class="btn w-16 h-16 flex mx-auto pr-20 items-center justify-center cursor-pointer" -->
-      <!-- <div
-        class="w-full h-full"
-        @mouseover="isHovering = true"
-        @mouseout="isHovering = false"
-      >
-        <transition
-          enter-active-class="duration-800 ease-in-out"
-          enter-class="-translate-x-full opacity-0"
-          enter-to-class="-translate-x-0 opacity-100"
-          leave-active-class="duration-800 ease-in"
-          leave-class="translate-x-0 opacity-100"
-          leave-to-class="translate-x-full opacity-0"
-          mode="out-in"
+      <!-- class="w-full h-full" -->
+      <nuxt-link to="/bio">
+        <div
+          class="btn w-16 h-16 flex mx-auto pr-20 items-center justify-center cursor-pointer"
+          @mouseover="isHovering = true"
+          @mouseout="isHovering = false"
         >
-          <About />
-          <div
-            v-if="done"
-            v-smooth-scroll="{ duration: 700 }"
-            href="#homeabout"
-            class="block p-7 relative transition-all transform duration-700"
+          <transition
+            enter-active-class="duration-800 ease-in-out"
+            enter-class="-translate-x-full opacity-0"
+            enter-to-class="-translate-x-0 opacity-100"
+            leave-active-class="duration-800 ease-in"
+            leave-class="translate-x-0 opacity-100"
+            leave-to-class="translate-x-full opacity-0"
+            mode="out-in"
           >
-            <span
-              class="btn__circle absolute ring-offset-green-700 ring-4 ring-green-700"
-            ></span>
-            <span class="h-14 w-14 btn__white-circle absolute bg-gray-900">
-              <svg viewBox="0 0 193.5 116" class="">
-                <circle
-                  class="eye pupil text-red-700 fill-current"
-                  :class="isHovering && 'pupil--open'"
-                  cx="96.8"
-                  cy="58"
-                  r="24"
-                />
-                <path
-                  class="eye text-red-700 fill-current"
-                  :class="isHovering && 'lid lid--open'"
-                  d="M5,58L5,58C23.4,26.3,57.6,5,96.8,5c39.3,0,73.8,21.3,91.8,53l0,0c0,0-26.7,53-91.8,53S5,58,5,58z"
-                />
-                <path
-                  class="eye text-red-700 fill-current"
-                  :class="isHovering && 'lid lid--close'"
-                  d="M5,58L5,58C23.4,26.3,57.6,5,96.8,5c39.3,0,73.8,21.3,91.8,53l0,0c0,0-26.7,53-91.8,53S5,58,5,58z"
-                />
-              </svg>
-            </span>
-            <span
-              class="btn__text absolute z-50 text-shadow text-xl sm:text-2xl md:text-3xl lg:text-4xl"
-              :class="
-                !isHovering
-                  ? 'text-yellow-100 animate-pulse'
-                  : 'text-green-400 animate-none'
-              "
+            <!-- <About /> -->
+            <!-- v-smooth-scroll="{ duration: 700 }"
+              href="#homeabout" -->
+            <div
+              v-if="done"
+              class="block p-7 relative transition-all transform duration-700"
             >
-              More...</span
-            >
-          </div>
-        </transition>
-      </div> -->
+              <span
+                class="btn__circle absolute ring-offset-green-700 ring-4 ring-green-700"
+              ></span>
+              <span class="h-14 w-14 btn__white-circle absolute bg-gray-900">
+                <svg viewBox="0 0 193.5 116" class="">
+                  <circle
+                    class="eye pupil text-red-700 fill-current"
+                    :class="isHovering && 'pupil--open'"
+                    cx="96.8"
+                    cy="58"
+                    r="24"
+                  />
+                  <path
+                    class="eye text-red-700 fill-current"
+                    :class="isHovering && 'lid lid--open'"
+                    d="M5,58L5,58C23.4,26.3,57.6,5,96.8,5c39.3,0,73.8,21.3,91.8,53l0,0c0,0-26.7,53-91.8,53S5,58,5,58z"
+                  />
+                  <path
+                    class="eye text-red-700 fill-current"
+                    :class="isHovering && 'lid lid--close'"
+                    d="M5,58L5,58C23.4,26.3,57.6,5,96.8,5c39.3,0,73.8,21.3,91.8,53l0,0c0,0-26.7,53-91.8,53S5,58,5,58z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="btn__text absolute z-50 text-shadow text-xl sm:text-2xl md:text-3xl lg:text-4xl"
+                :class="
+                  !isHovering
+                    ? 'text-yellow-100 animate-pulse'
+                    : 'text-green-400 animate-none'
+                "
+              >
+                More...</span
+              >
+            </div>
+          </transition>
+        </div>
+      </nuxt-link>
     </div>
   </div>
 </template>
@@ -132,9 +134,9 @@ export default {
     }
   },
   mounted() {
-    setTimeout(() => {
-      this.done = true
-    }, 1000)
+    // setTimeout(() => {
+    //   this.done = true
+    // }, 1000)
     this.flashCurser()
     this.text = this.lines[0]
     this.typeWriter(this.text)

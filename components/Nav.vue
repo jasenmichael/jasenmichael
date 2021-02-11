@@ -16,10 +16,10 @@
       </nuxt-link>
 
       <!-- md pages/routes -->
-      <ul
+      <div
         class="hidden md:flex font-semibold tracking-tight uppercase items-center ml-auto space-x-2"
       >
-        <li
+        <div
           v-for="(link, i) in links"
           :key="i"
           class="transform duration-300 ease-in-out hover:rotate-2 hover:scale-110 cursor-pointer hover:ring-1 hover:shadow-md ring-green-400 p-2 rounded-xl md:text-xl lg:text-2xl xl:text-4xl"
@@ -27,8 +27,8 @@
           <nuxt-link :to="`/${link}`">
             {{ link }}
           </nuxt-link>
-        </li>
-      </ul>
+        </div>
+      </div>
 
       <!-- mobile side panel pages/routes -->
       <aside

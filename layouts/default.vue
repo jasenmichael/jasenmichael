@@ -7,3 +7,23 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {}
+</script>
+
+<style>
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+
+  /* transition: opacity 0.5s; */
+}
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+  transform: translate3d(0, 15px, 0);
+
+  /* opacity: 0; */
+}
+</style>

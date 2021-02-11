@@ -1,47 +1,13 @@
 <template>
-  <div
-    id="homeabout"
-    class="bg-red-800 text-yellow-50 px-4 md:px-16 lg:px-40 overflow-hidden flex flex-col"
-  >
-    <!-- :style="scrollY >= 200 ? 'min-height: calc(100vh)' : 'height: 200px'" -->
-    <!-- <div v-show="scrollY >= 200"> -->
-    <div>
-      <div class="md:grid lg:grid-cols-3 md:items-start sm:gap-6">
-        <!-- Image -->
-        <!-- <div class="aspect-w-16 aspect-h-9 md:aspect-w-16 md:aspect-h-9">
-          <img
-            class="object-cover border-b-2 border-t-2 bg-green-200 rounded-3xl lg:rounded-none transform rotate-90 border-yellow-100"
-            src="/me.png"
-            alt=""
-          />
-        </div> -->
-
-        <!-- animation image -->
-        <div
-          class="md:row-span-2 w-screen md:w-full h-full flex flex-col items-center my-auto md:col-span-2 lg:col-span-1"
-        >
-          <MeSvg v-if="mounted" />
-        </div>
-        <div class="">
-          <!-- head -->
-          <div class="space-y-4">
-            <div class="text-lg leading-6 font-medium space-y-1">
-              <h3 class="text-green-200">Jasen Michael</h3>
-              <p class="text-yellow-100">
-                Software Engineer - Builder - Cunsultant - Educator.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- document section -->
-        <div class="md:col-span-3">
-          <div class="text-lg">
-            <div class="text-gray-200 text-shadow-md text-3xl">
-              <nuxt-content :document="bio" />
-            </div>
-          </div>
-          <ul class="flex space-x-5">
+  <div class="bg-red-800 text-yellow-50 px-4 md:px-16 lg:px-40 overflow-hidden">
+    <!-- animation image -->
+    <!-- document section -->
+    <div class="max-w-md bg-gray-900 rounded-xl overflow-hidden">
+      <MeSvg />
+    </div>
+    <nuxt-content :document="bio" class="prose-xl lg:prose-2xl pt-10" />
+    <!-- links section -->
+    <!-- <ul class="flex space-x-5">
             <li>
               <a href="#" class="text-gray-400 hover:text-gray-500">
                 <span class="sr-only">Twitter</span>
@@ -74,10 +40,7 @@
                 </svg>
               </a>
             </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+          </ul> -->
   </div>
 </template>
 

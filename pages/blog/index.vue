@@ -26,6 +26,7 @@
 
 <script>
 export default {
+  transition: 'page',
   async asyncData({ $content, error }) {
     const blogs = await $content('blog')
       .only([
