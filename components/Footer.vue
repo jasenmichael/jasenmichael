@@ -25,7 +25,11 @@
           &#8594;
         </button>
       </div> -->
-      <div class="bg-green-500">footer</div>
+      <div
+        class="flex items-center uppercase text-grey-800 text-base text-shadow bg-green-500 justify-center"
+      >
+        Copyright © all rights reserved {{ getYear() }}
+      </div>
     </div>
 
     <!-- <div class="bg-green-500 h-12"></div> -->
@@ -64,6 +68,11 @@ export default {
       const prev = [...this.images]
       prev.unshift(prev.pop())
       this.images = prev
+    },
+    getYear() {
+      const date = new Date()
+      const year = date.getFullYear()
+      return year
     },
   },
 }
