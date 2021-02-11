@@ -47,7 +47,8 @@
       </div> -->
       <!-- more btn -->
       <!-- class="w-full h-full" -->
-      <nuxt-link to="/bio">
+      <nuxt-link to="/bio" aria-label="Bio">
+        <span class="sr-only">Bio</span>
         <div
           class="btn w-16 h-16 flex mx-auto pr-20 items-center justify-center cursor-pointer"
           @mouseover="isHovering = true"
