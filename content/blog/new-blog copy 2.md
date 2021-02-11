@@ -1,7 +1,7 @@
 ---
 title: new-blog
 description: yo yo yo
-cover: https://source.unsplash.com/collection/1346951/1000x500?sig=3
+cover: https://source.unsplash.com/collection/1346951/1000x500?sig=1
 category: technology
 tags: ['vue', 'nuxt', 'nuxt-content', 'netlify']
 author: jasenmichael

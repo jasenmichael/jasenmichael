@@ -4,7 +4,7 @@
   >
     <div class="shadow-lg mb-6">
       <img
-        class="object-cover max-h-36 md:max-h-48 lg:max-h-64 w-screen rounded-t-lg"
+        class="object-cover h-32 sm:h-40 md:h-52 lg:h-72 w-screen rounded-t-lg"
         :src="blog.cover || '/img/blog.jpg'"
       />
       <hr class="rounded-b-lg border-2 border-green-500" />
