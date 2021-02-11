@@ -1,33 +1,42 @@
 <template>
-  <div class="flex flex-col">
+  <!-- class="flex flex-col flex-wrap" -->
+  <div
+    class="opacity-90 hover:opacity-100 flex flex-col rounded-lg h-full bg-gray-50 shadow-lg overflow-hidden transform transition-all hover:scale-101"
+  >
     <!-- image -->
-    <div class="flex-shrink-0">
-      <img
-        class="h-48 w-full object-cover"
-        src="https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80"
-        alt=""
-      />
-    </div>
-    <div class="flex-grow p-6 flex flex-col justify-between">
-      <div class="flex-grow">
-        <!-- category -->
-        <p class="text-sm font-medium text-indigo-600">
-          <a href="#" class="hover:underline"> {{ blog.category }} </a>
-        </p>
-        <!-- title -->
-        <a href="#" class="block mt-2 mb-auto">
-          <p class="text-xl font-semibold text-gray-900">
-            {{ blog.title }}
-          </p>
-          <!-- descrition -->
-          <p class="mt-3 text-base text-gray-500">
-            {{ blog.description }}
-          </p>
-        </a>
-      </div>
 
-      <!-- author -->
-      <div class="mt-6 flex items-center">
+    <img
+      class="h-48 w-full object-cover"
+      src="https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80"
+      alt=""
+    />
+
+    <!-- card content -->
+    <div class="flex-grow">
+      <div class="flex flex-col mx-4 md:mx-6">
+        <div class="flex-1">
+          <!-- <div class="border"> -->
+          <!-- category -->
+          <p class="text-sm font-medium text-green-700">
+            <a href="#" class="hover:underline"> {{ blog.category }} </a>
+          </p>
+          <!-- title -->
+          <a href="#" class="block mt-2 mb-auto">
+            <p class="text-xl font-semibold text-gray-900">
+              {{ blog.title }}
+            </p>
+            <!-- descrition -->
+            <p class="mt-3 text-base text-gray-600">
+              {{ blog.description }}
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- author -->
+    <div class="my-4 mx-6">
+      <div class="flex">
         <!-- avatar -->
         <div class="mt-auto">
           <img

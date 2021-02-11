@@ -11,13 +11,14 @@
           :class="image.view === 'landscape' && 'col-span-2'"
         >
           <img
-            :src="
+            v-lazy-load
+            :data-src="
               $config.isDev
                 ? image.imgThumb
                 : `${$config.cloudinaryUrl}/${image.imgThumb}`
             "
             loading="lazy"
-            :alt="'image ' + image.imgThumb"
+            alt="image"
             class="w-full h-full object-cover opacity-75 hover:opacity-100 hover:shadow-md hover:z-30 hover:ring-2 hover:ring-gray-600 hover:scale-101 transform duration-500 ease-in-out"
           />
         </div>

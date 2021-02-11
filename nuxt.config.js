@@ -22,7 +22,13 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/svg',
   ],
-  modules: ['@nuxtjs/pwa', '@nuxt/content', '@nuxtjs/feed', '@nuxtjs/svg'],
+  modules: [
+    '@nuxtjs/pwa',
+    '@nuxt/content',
+    '@nuxtjs/feed',
+    '@nuxtjs/svg',
+    'nuxt-lazy-load',
+  ],
   pwa: {
     manifest: {
       theme_color: '#111827',

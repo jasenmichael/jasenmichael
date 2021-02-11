@@ -1,11 +1,12 @@
 <template>
   <div>
-    <div
-      class="bg-green-500 text-xl font-bold text-gray-900 text-shadow min-h-36"
-    >
-      <div class="relative w-full flex items-center invisible md:visible">
+    <div class="bg-gray-900 text-xl font-bold text-gray-900 text-shadow">
+      <div
+        class="min-h-36 relative w-full flex items-center invisible md:visible"
+      >
         <button
-          class="z-30 absolute bg-blue-800 hover:bg-blue-700 text-white text-2xl font-bold hover:shadow rounded-full w-16 h-16 ml-12"
+          v-if="isMounted"
+          class="z-30 absolute bg-red-700 opacity-60 hover:animate-pulse text-white text-2xl font-bold hover:shadow rounded-full w-12 h-12 ml-12"
           @click="decrement()"
         >
           &#8592;
@@ -13,18 +14,18 @@
         <img
           v-for="(image, i) in images.slice(0, 6)"
           :key="i"
-          class="w-1/6 hover:opacity-75 transition-all ease-in-out duration-1000 transform translate-x-0"
+          class="w-1/6 opacity-60 hover:opacity-100 transition-all ease-in-out duration-1000 transform translate-x-0"
           :src="image"
         />
-        <!-- <div></div> -->
         <button
-          class="absolute right-0 bg-blue-800 hover:bg-blue-700 text-white text-2xl font-bold hover:shadow rounded-full w-16 h-16 mr-12"
+          v-if="isMounted"
+          class="absolute right-0 bg-red-700 opacity-60 hover:animate-pulse text-white text-2xl font-bold hover:shadow rounded-full w-12 h-12 mr-12"
           @click="increment()"
         >
           &#8594;
         </button>
       </div>
-      <div>footer</div>
+      <div class="bg-green-500">footer</div>
     </div>
 
     <!-- <div class="bg-green-500 h-12"></div> -->
@@ -35,6 +36,7 @@
 export default {
   data: () => {
     return {
+      isMounted: false,
       images: [
         'https://source.unsplash.com/collection/1346951/800x800?sig=1',
         'https://source.unsplash.com/collection/1346951/800x800?sig=2',
@@ -47,6 +49,9 @@ export default {
         'https://source.unsplash.com/collection/1346951/800x800?sig=0',
       ],
     }
+  },
+  mounted() {
+    this.isMounted = true
   },
   methods: {
     increment() {
