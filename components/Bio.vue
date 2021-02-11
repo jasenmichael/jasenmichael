@@ -10,7 +10,7 @@
     <nuxt-content :document="bio" class="prose-lg lg:prose-xl pt-10" />
     <!-- links section -->
     <ul class="flex">
-      <div class="mx-auto flex space-x-5 items-center">
+      <div class="mx-auto flex space-x-5 items-center md:mb-20">
         <li>
           <a
             href="https://twitter.com/jasen_michael"
