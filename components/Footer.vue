@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="bg-gray-900 text-xl font-bold text-gray-900 text-shadow">
-      <div
+      <!-- <div
         class="min-h-36 relative w-full flex items-center invisible md:visible"
       >
         <button
@@ -24,7 +24,7 @@
         >
           &#8594;
         </button>
-      </div>
+      </div> -->
       <div class="bg-green-500">footer</div>
     </div>
 
