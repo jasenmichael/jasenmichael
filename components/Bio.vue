@@ -19,6 +19,7 @@
             href="https://twitter.com/jasen_michael"
             target="_blank"
             class="text-gray-400 hover:text-gray-500"
+            aria-label="Bio"
           >
             <span class="sr-only">Twitter</span>
             <svg
