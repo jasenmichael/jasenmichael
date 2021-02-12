@@ -35,7 +35,7 @@
 
         <!-- social -->
         <div
-          class="flex items-center ml-auto md:ml-4 space-x-2 md:space-x-4"
+          class="flex items-center ml-auto md:ml-4 space-x-2 lg:space-x-4"
           :class="scrollY >= 12 ? 'text-gray-700' : 'text-green-300'"
         >
           <div>
@@ -48,7 +48,7 @@
               @click="isOpen = false"
             >
               <IconTwitter
-                class="items-center h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10 fill-current duration-200 transform hover:rotate-6 hover:scale-110 hover:text-blue-500"
+                class="items-center h-6 w-6 lg:h-10 lg:w-10 fill-current duration-200 transform hover:rotate-6 hover:scale-110 hover:text-blue-500"
               />
             </a>
           </div>
@@ -61,7 +61,7 @@
               @click="isOpen = false"
             >
               <IconInstagram
-                class="items-center h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10 fill-current duration-200 transform hover:rotate-6 hover:scale-110 hover:text-pink-700"
+                class="items-center h-6 w-6 lg:h-10 lg:w-10 fill-current duration-200 transform hover:rotate-6 hover:scale-110 hover:text-pink-700"
               />
             </a>
           </div>
@@ -74,7 +74,7 @@
               @click="isOpen = false"
             >
               <IconGithub
-                class="items-center h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10 fill-current duration-200 transform hover:rotate-6 hover:scale-110"
+                class="items-center h-6 w-6 lg:h-10 lg:w-10 fill-current duration-200 transform hover:rotate-6 hover:scale-110"
                 :class="scrollY <= 12 ? 'hover:text-white' : 'hover:text-black'"
               />
             </a>
