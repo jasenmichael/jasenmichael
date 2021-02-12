@@ -22,7 +22,7 @@ I am open to new opportunities. Here is my **<a href="/jasenmichael-resume.pdf" 
 
 ### Fun Facts
 
-I can 🛹 kickflip a 4 stair, and make fire without a lighter or matches.
+I can 🛹 kickflip a 4 stair, and make fire 🔥 with just things lying around the forest.
 
 ### ☕ Let's have coffee
 
