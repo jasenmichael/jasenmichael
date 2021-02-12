@@ -10,7 +10,7 @@
           <div class="flex items-center">
             <div class="text-6xl mb-1">&#60;</div>
             <IconLogo
-              class="text-green-400 bg-clip-text fill-current h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20"
+              class="text-green-400 bg-clip-text fill-current h-14 w-14"
             />
             <div class="text-6xl ml-1 mb-1">&#62;</div>
           </div>
