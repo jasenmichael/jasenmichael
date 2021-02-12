@@ -56,11 +56,7 @@
       <div class="flex">
         <!-- avatar -->
         <div class="mt-auto">
-          <img
-            class="h-10 w-10 rounded-full"
-            src="https://avatars.githubusercontent.com/u/30030129?s=60&v=4"
-            alt=""
-          />
+          <img class="h-10 w-10 rounded-full" :src="blog.avatar" alt="" />
         </div>
         <!-- author -->
         <div class="ml-3">

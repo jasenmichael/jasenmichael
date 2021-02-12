@@ -5,6 +5,8 @@ cover: https://source.unsplash.com/collection/1346951/1000x500?sig=6
 category:
 tags: []
 author: jasenmichael
+avatar: https://avatars.githubusercontent.com/u/30030129?s=60&v=4
+published: false
 ---
 
 ### Q: should I keep using it, should I migrate?
