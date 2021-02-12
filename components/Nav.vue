@@ -208,7 +208,8 @@ export default {
 .links {
   @apply items-center h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12 fill-current transform hover:rotate-6 hover:scale-110;
 }
-
+</style>
+<style>
 .e7h61dww922a2_to {
   animation: e7h61dww922a2_to__to 3000ms linear 1 normal forwards;
 }
