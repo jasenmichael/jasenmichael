@@ -12,7 +12,7 @@
             <!-- <div class="text-6xl mb-1">&#60;</div> -->
             <IconLogo
               v-show="mounted"
-              class="text-green-400 fill-current h-10"
+              class="text-green-400 fill-current h-10 absolute z-50"
             />
             <!-- <div class="text-6xl ml-1 mb-1">&#62;</div> -->
           </div>
@@ -179,7 +179,7 @@ export default {
 }
 </style>
 
-<style scoped>
+<style>
 #e3vg00wjvpl22_to {
   animation: e3vg00wjvpl22_to__to 3000ms linear 1 normal forwards;
 }
