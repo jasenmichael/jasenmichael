@@ -15,6 +15,7 @@
       >
         {{ blog.title }}
       </h1>
+      <ReadingTime :content="blog" />
       <nuxt-content
         class="prose sm:prose-lg md:prose-xl lg:prose-2xl prose-yellow"
         :document="blog"

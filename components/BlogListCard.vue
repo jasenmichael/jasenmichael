@@ -70,7 +70,8 @@
           <div class="flex space-x-1 text-sm text-gray-500">
             <time datetime="2020-03-10"> {{ formatDate(blog.updatedAt) }}</time>
             <span aria-hidden="true"> &middot; </span>
-            <span> 4 min read </span>
+            <!-- <ReadingTime :content="blog.body" /> -->
+            <!-- <span> 4 min read </span> -->
           </div>
         </div>
       </div>
