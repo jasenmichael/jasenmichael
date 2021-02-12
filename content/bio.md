@@ -22,7 +22,7 @@ I am open to new opportunities. Here is my **<a href="/jasenmichael-resume.pdf" 
 
 ### Fun Facts
 
-I have three children, I can kickflip 🛹 a 4 stair, and make fire without a lighter or matches. I dream of being part of a team that has a significant positive impact.
+I can kickflip 🛹 a 4 stair, and make fire without a lighter or matches. I dream of being part of a team that has a significant positive impact.
 
 ### ☕ Let's have coffee
 
