@@ -118,8 +118,8 @@ export default {
     return {
       lines: [
         "The 'e' is for efficiency.",
-        'I like to build stuff, and manifest things.',
-        "Let's create something together, and change the world!",
+        'I like to build things, and solve problems.',
+        "Let's create something together!",
       ],
       currentLine: '',
       currentLineIndex: 0,
