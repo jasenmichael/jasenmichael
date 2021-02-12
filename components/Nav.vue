@@ -11,7 +11,7 @@
           <div class="flex items-center -ml-64">
             <!-- <div class="text-6xl mb-1">&#60;</div> -->
             <IconLogo
-              v-show="mounted"
+              v-show="isMounted"
               class="text-green-400 bg-green-400 bg-clip-text fill-current h-10 z-50"
             />
             <!-- <div class="text-6xl ml-1 mb-1">&#62;</div> -->
@@ -147,14 +147,14 @@ export default {
   },
   data: () => {
     return {
-      mounted: false,
+      isMounted: false,
       links: ['blog', 'projects', 'photos', 'contact'],
       scrollY: 0,
       isOpen: false,
     }
   },
   mounted() {
-    this.mounted = true
+    this.isMounted = true
     window.addEventListener('scroll', this.handleScroll)
   },
   methods: {
