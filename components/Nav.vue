@@ -12,7 +12,7 @@
             <!-- <div class="text-6xl mb-1">&#60;</div> -->
             <IconLogo
               v-show="mounted"
-              class="text-green-400 bg-clip-text fill-current h-10"
+              class="text-green-400 fill-current h-10"
             />
             <!-- <div class="text-6xl ml-1 mb-1">&#62;</div> -->
           </div>
