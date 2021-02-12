@@ -46,7 +46,7 @@
               @click="isOpen = false"
             >
               <IconTwitter
-                class="items-center h-4 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10 fill-current duration-200 transform hover:rotate-6 hover:scale-110 hover:text-blue-500"
+                class="items-center h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10 fill-current duration-200 transform hover:rotate-6 hover:scale-110 hover:text-blue-500"
               />
             </a>
           </div>
