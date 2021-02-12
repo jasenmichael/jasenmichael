@@ -8,7 +8,7 @@
         <!-- brand/logo -->
         <nuxt-link to="/" aria-label="Home Page">
           <!-- <span class="sr-only">Home Page</span> -->
-          <div class="flex items-center">
+          <div class="flex items-center -ml-64">
             <!-- <div class="text-6xl mb-1">&#60;</div> -->
             <IconLogo
               v-show="mounted"
@@ -136,7 +136,7 @@
 import IconTwitter from '@/assets/icons/twitter.svg?inline'
 import IconInstagram from '@/assets/icons/instagram.svg?inline'
 import IconGithub from '@/assets/icons/github.svg?inline'
-import IconLogo from '@/assets/logo.svg?inline'
+import IconLogo from '@/assets/logo2.svg?inline'
 
 export default {
   components: {
@@ -180,12 +180,12 @@ export default {
 </style>
 
 <style>
-#e3vg00wjvpl22_to {
-  animation: e3vg00wjvpl22_to__to 3000ms linear 1 normal forwards;
+#e7h61dww922a2_to {
+  animation: e7h61dww922a2_to__to 3000ms linear 1 normal forwards;
 }
-@keyframes e3vg00wjvpl22_to__to {
+@keyframes e7h61dww922a2_to__to {
   0% {
-    transform: translate(-743.21803px, 426.000574px);
+    transform: translate(-1356.467057px, 424.059038px);
     animation-timing-function: cubic-bezier(0.25, 1, 0.25, 1);
   }
   30% {
@@ -199,10 +199,10 @@ export default {
     transform: translate(750.5px, 426.000574px);
   }
 }
-#e3vg00wjvpl22_tk {
-  animation: e3vg00wjvpl22_tk__tk 3000ms linear 1 normal forwards;
+#e7h61dww922a2_tk {
+  animation: e7h61dww922a2_tk__tk 3000ms linear 1 normal forwards;
 }
-@keyframes e3vg00wjvpl22_tk__tk {
+@keyframes e7h61dww922a2_tk__tk {
   0% {
     transform: skewX(20deg) skewY(0deg);
   }
@@ -219,15 +219,15 @@ export default {
     transform: skewX(0deg) skewY(0deg);
   }
 }
-#e3vg00wjvpl22 {
-  animation-name: e3vg00wjvpl22__tt, e3vg00wjvpl22_f_o, e3vg00wjvpl22_s_w;
+#e7h61dww922a2 {
+  animation-name: e7h61dww922a2__tt, e7h61dww922a2_f_o, e7h61dww922a2_s_w;
   animation-duration: 3000ms;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
   animation-direction: normal;
   animation-iteration-count: 1;
 }
-@keyframes e3vg00wjvpl22__tt {
+@keyframes e7h61dww922a2__tt {
   0% {
     transform: translate(-753.24181px, -426.00058px);
   }
@@ -238,7 +238,7 @@ export default {
     transform: translate(-751.502026px, -426.00058px);
   }
 }
-@keyframes e3vg00wjvpl22_f_o {
+@keyframes e7h61dww922a2_f_o {
   0% {
     fill-opacity: 0;
     animation-timing-function: cubic-bezier(0.25, 1, 0.25, 1);
@@ -250,7 +250,7 @@ export default {
     fill-opacity: 1;
   }
 }
-@keyframes e3vg00wjvpl22_s_w {
+@keyframes e7h61dww922a2_s_w {
   0% {
     stroke-width: 10;
     animation-timing-function: cubic-bezier(0.25, 1, 0.25, 1);
