@@ -6,7 +6,7 @@
     >
       <div class="flex items-center w-full py-3" @click="isOpen = false">
         <!-- brand/logo -->
-        <nuxt-link to="/">
+        <nuxt-link to="/" aria-label="Home Page">
           <div class="flex items-center">
             <!-- <div class="text-6xl mb-1">&#60;</div> -->
             <!-- <IconLogo
