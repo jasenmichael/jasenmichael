@@ -18,7 +18,7 @@
             <svg
               v-show="isMounted"
               id="e7h61dww922a1"
-              class="text-green-400 bg-green-400 bg-clip-text fill-current h-10 z-50"
+              class="text-green-400 fill-current h-10 z-50"
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
               viewBox="-3000 0 4500 472"
