@@ -10,14 +10,38 @@
       <hr class="rounded-b-lg border-2 border-green-500" />
     </div>
     <div>
-      <h1
-        class="text-center text-green-300 text-4xl md:text-5xl lg:text-6xl font-bold"
-      >
+      <h1 class="text-green-300 text-4xl md:text-5xl lg:text-6xl font-bold">
         {{ blog.title }}
       </h1>
-      <ReadingTime :content="blog" />
+      <div class="my-4 mx-2">
+        <div class="flex">
+          <!-- avatar -->
+          <div class="mt-auto items-center">
+            <img
+              class="h-10 w-10 rounded-full"
+              src="https://avatars.githubusercontent.com/u/30030129?s=60&v=4"
+              alt=""
+            />
+          </div>
+          <!-- author -->
+          <div class="ml-3">
+            <p class="text-sm font-medium text-gray-100">
+              <a href="#" class="hover:underline"> {{ blog.author }} </a>
+            </p>
+            <div class="flex space-x-1 text-sm text-gray-500">
+              <time datetime="2020-03-10">
+                {{ formatDate(blog.updatedAt) }}</time
+              >
+              <span aria-hidden="true"> &middot; </span>
+              <ReadingTime :content="blog" />
+              <!-- <ReadingTime :content="blog.body" /> -->
+              <!-- <span> 4 min read </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
       <nuxt-content
-        class="prose sm:prose-lg md:prose-xl lg:prose-2xl prose-yellow"
+        class="pt-3 prose sm:prose-lg md:prose-xl lg:prose-2xl prose-yellow"
         :document="blog"
       ></nuxt-content>
     </div>
@@ -29,6 +53,12 @@ export default {
   async asyncData({ $content, params, error }) {
     const blog = await $content('blog', params.slug).fetch()
     return { blog }
+  },
+  methods: {
+    formatDate(date) {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' }
+      return new Date(date).toLocaleDateString('en', options)
+    },
   },
 }
 </script>

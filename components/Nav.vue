@@ -12,7 +12,7 @@
             <!-- <div class="text-6xl mb-1">&#60;</div> -->
             <IconLogo
               v-show="mounted"
-              class="text-green-400 bg-green-400 bg-clip-text fill-current h-10 absolute z-50"
+              class="text-green-400 bg-green-400 bg-clip-text fill-current h-10 z-50"
             />
             <!-- <div class="text-6xl ml-1 mb-1">&#62;</div> -->
           </div>
@@ -48,7 +48,7 @@
               @click="isOpen = false"
             >
               <IconTwitter
-                class="items-center h-6 w-6 lg:h-10 lg:w-10 fill-current duration-200 transform hover:rotate-6 hover:scale-110 hover:text-blue-500"
+                class="items-center h-6 w-6 lg:h-8 lg:w-8 fill-current duration-200 transform hover:rotate-6 hover:scale-110 hover:text-blue-500"
               />
             </a>
           </div>
@@ -61,7 +61,7 @@
               @click="isOpen = false"
             >
               <IconInstagram
-                class="items-center h-6 w-6 lg:h-10 lg:w-10 fill-current duration-200 transform hover:rotate-6 hover:scale-110 hover:text-pink-700"
+                class="items-center h-6 w-6 lg:h-8 lg:w-8 fill-current duration-200 transform hover:rotate-6 hover:scale-110 hover:text-pink-700"
               />
             </a>
           </div>
@@ -74,7 +74,7 @@
               @click="isOpen = false"
             >
               <IconGithub
-                class="items-center h-6 w-6 lg:h-10 lg:w-10 fill-current duration-200 transform hover:rotate-6 hover:scale-110"
+                class="items-center h-6 w-6 lg:h-8 lg:w-8 fill-current duration-200 transform hover:rotate-6 hover:scale-110"
                 :class="scrollY <= 12 ? 'hover:text-white' : 'hover:text-black'"
               />
             </a>
