@@ -23,7 +23,7 @@
           <div
             v-for="(link, i) in links"
             :key="i"
-            class="transform duration-300 ease-in-out hover:rotate-2 hover:scale-110 cursor-pointer hover:ring-1 hover:shadow-md ring-green-400 p-2 rounded-xl md:text-xl lg:text-2xl xl:text-4xl"
+            class="transform duration-300 ease-in-out hover:rotate-2 hover:scale-110 cursor-pointer hover:ring-1 hover:shadow-md ring-green-400 p-2 rounded-xl md:text-xl lg:text-2xl xl:text-3xl"
           >
             <nuxt-link :to="`/${link}`">
               {{ link }}
@@ -46,7 +46,7 @@
               @click="isOpen = false"
             >
               <IconTwitter
-                class="items-center h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12 xl:h-14 xl:w-14 fill-current duration-200 transform hover:rotate-6 hover:scale-110 hover:text-blue-500"
+                class="items-center h-4 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10 fill-current duration-200 transform hover:rotate-6 hover:scale-110 hover:text-blue-500"
               />
             </a>
           </div>
@@ -59,7 +59,7 @@
               @click="isOpen = false"
             >
               <IconInstagram
-                class="items-center h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12 xl:h-14 xl:w-14 fill-current duration-200 transform hover:rotate-6 hover:scale-110 hover:text-pink-700"
+                class="items-center h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10 fill-current duration-200 transform hover:rotate-6 hover:scale-110 hover:text-pink-700"
               />
             </a>
           </div>
@@ -72,7 +72,7 @@
               @click="isOpen = false"
             >
               <IconGithub
-                class="items-center h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12 xl:h-14 xl:w-14 fill-current duration-200 transform hover:rotate-6 hover:scale-110"
+                class="items-center h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10 fill-current duration-200 transform hover:rotate-6 hover:scale-110"
                 :class="scrollY <= 12 ? 'hover:text-white' : 'hover:text-black'"
               />
             </a>
