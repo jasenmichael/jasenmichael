@@ -5,11 +5,11 @@
       class="flex px-4 md:px-16 lg:px-40 items-center w-screen z-40 fixed transition-colors duration-500 border-b-4 border-red-900"
       :class="scrollY <= 12 ? 'dark ' : 'light shadow-md'"
     >
-      <div class="flex items-center w-full py-3" @click="isOpen = false">
+      <div class="flex items-center w-full" @click="isOpen = false">
         <!-- brand/logo -->
-        <nuxt-link to="/" aria-label="Home Page">
+        <nuxt-link to="/" aria-label="Home Page ">
           <!-- <span class="sr-only">Home Page</span> -->
-          <div class="flex items-center -ml-64">
+          <div class="flex items-center -ml-64 my-3">
             <!-- <div class="text-6xl mb-1">&#60;</div> -->
             <!-- <IconLogo
               v-show="isMounted"
