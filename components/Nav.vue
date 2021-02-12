@@ -10,7 +10,10 @@
           <!-- <span class="sr-only">Home Page</span> -->
           <div class="flex items-center">
             <!-- <div class="text-6xl mb-1">&#60;</div> -->
-            <IconLogo class="text-green-400 bg-clip-text fill-current h-10" />
+            <IconLogo
+              v-show="mounted"
+              class="text-green-400 bg-clip-text fill-current h-10"
+            />
             <!-- <div class="text-6xl ml-1 mb-1">&#62;</div> -->
           </div>
         </nuxt-link>

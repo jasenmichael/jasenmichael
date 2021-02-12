@@ -1,6 +1,6 @@
 ---
-title: Nuxt Basics Part 1 
-description:
+title: Nuxt Basics Part 1
+description: Getting started - installation and overview
 cover:
 category:
 tags: []
