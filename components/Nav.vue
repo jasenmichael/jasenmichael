@@ -136,7 +136,7 @@
 import IconTwitter from '@/assets/icons/twitter.svg?inline'
 import IconInstagram from '@/assets/icons/instagram.svg?inline'
 import IconGithub from '@/assets/icons/github.svg?inline'
-import IconLogo from '@/assets/logo-jasen-animated.svg?inline'
+import IconLogo from '@/assets/logo.svg?inline'
 
 export default {
   components: {
