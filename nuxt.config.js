@@ -13,7 +13,7 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/icon.ico' }],
   },
-  css: [],
+  css: ['@/assets/main.css'],
   plugins: [{ src: './plugins/smooth-scroll', mode: 'client' }],
   components: true,
   buildModules: [

@@ -16,6 +16,7 @@
               class="text-green-400 bg-green-400 bg-clip-text fill-current h-10 z-50"
             /> -->
             <svg
+              v-show="isMounted"
               class="e7h61dww922a1 text-green-400 fill-current h-10 z-50"
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -206,90 +207,5 @@ export default {
 
 .links {
   @apply items-center h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12 fill-current transform hover:rotate-6 hover:scale-110;
-}
-</style>
-
-<style>
-.e7h61dww922a2_to {
-  animation: e7h61dww922a2_to__to 3000ms linear 1 normal forwards;
-}
-@keyframes e7h61dww922a2_to__to {
-  0% {
-    transform: translate(-1356.467057px, 424.059038px);
-    animation-timing-function: cubic-bezier(0.25, 1, 0.25, 1);
-  }
-  30% {
-    transform: translate(750.5px, 426.000574px);
-    animation-timing-function: cubic-bezier(0.25, 1, 0.25, 1);
-  }
-  40% {
-    transform: translate(750.5px, 426.000574px);
-  }
-  100% {
-    transform: translate(750.5px, 426.000574px);
-  }
-}
-.e7h61dww922a2_tk {
-  animation: e7h61dww922a2_tk__tk 3000ms linear 1 normal forwards;
-}
-@keyframes e7h61dww922a2_tk__tk {
-  0% {
-    transform: skewX(20deg) skewY(0deg);
-  }
-  20% {
-    transform: skewX(0deg) skewY(0deg);
-  }
-  23.333333% {
-    transform: skewX(-10deg) skewY(0deg);
-  }
-  30% {
-    transform: skewX(0deg) skewY(0deg);
-  }
-  100% {
-    transform: skewX(0deg) skewY(0deg);
-  }
-}
-.e7h61dww922a2 {
-  animation-name: e7h61dww922a2__tt, e7h61dww922a2_f_o, e7h61dww922a2_s_w;
-  animation-duration: 3000ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: linear;
-  animation-direction: normal;
-  animation-iteration-count: 1;
-}
-@keyframes e7h61dww922a2__tt {
-  0% {
-    transform: translate(-753.24181px, -426.00058px);
-  }
-  40% {
-    transform: translate(-751.502026px, -426.00058px);
-  }
-  100% {
-    transform: translate(-751.502026px, -426.00058px);
-  }
-}
-@keyframes e7h61dww922a2_f_o {
-  0% {
-    fill-opacity: 0;
-    animation-timing-function: cubic-bezier(0.25, 1, 0.25, 1);
-  }
-  66.666667% {
-    fill-opacity: 1;
-  }
-  100% {
-    fill-opacity: 1;
-  }
-}
-@keyframes e7h61dww922a2_s_w {
-  0% {
-    stroke-width: 10;
-    animation-timing-function: cubic-bezier(0.25, 1, 0.25, 1);
-  }
-  66.666667% {
-    stroke-width: 0;
-  }
-  100% {
-    stroke-width: 0;
-  }
 }
 </style>
