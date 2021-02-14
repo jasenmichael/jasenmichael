@@ -1,7 +1,6 @@
 <template>
   <div
-    class="pb-10 px-4 md:px-16 lg:px-40 overflow-hidden flex flex-col"
-    style="min-height: calc(100vh - 4rem)"
+    class="min-h-screen pb-10 px-4 md:px-16 lg:px-40 overflow-hidden flex flex-col"
   >
     <div class="my-auto">
       <div class="h-44 md:h-52 lg:h-96">

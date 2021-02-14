@@ -1,6 +1,6 @@
 <template>
   <div
-    class="text-yellow-50 px-4 md:px-16 lg:px-52 md:mb-16 lg:mb-2 overflow-hidden"
+    class="text-yellow-50 mt-10 md:mt-12 lg:mt-14 px-4 md:px-16 lg:px-52 mb-6 md:mb-0 lg:mb-2 overflow-hidden"
   >
     <!-- animation image -->
     <!-- document section -->

@@ -1,6 +1,6 @@
 <template>
   <!-- eslint-disable max-len -->
-  <div>
+  <div class="relative">
     <nav
       class="flex px-4 md:px-16 lg:px-40 items-center w-screen z-40 fixed transition-colors duration-500 border-b-4 border-red-900"
       :class="scrollY <= 12 ? 'dark ' : 'light shadow-md'"
@@ -13,7 +13,7 @@
             <!-- <div class="text-6xl mb-1">&#60;</div> -->
             <IconLogo
               v-show="isMounted"
-              class="text-green-400 bg-green-400 bg-clip-text fill-current h-10 z-50"
+              class="text-green-400 fill-current h-10 z-50"
             />
 
             <!-- <div class="text-6xl ml-1 mb-1">&#62;</div> -->
@@ -24,12 +24,11 @@
         <div
           class="hidden md:flex font-semibold tracking-tight uppercase items-center ml-auto space-x-2"
         >
-          <div
-            v-for="(link, i) in links"
-            :key="i"
-            class="transform duration-300 ease-in-out hover:rotate-2 hover:scale-110 cursor-pointer hover:ring-1 hover:shadow-md ring-green-400 p-2 rounded-xl md:text-xl lg:text-2xl xl:text-3xl"
-          >
-            <nuxt-link :to="`/${link}`">
+          <div v-for="(link, i) in links" :key="i" class="links">
+            <nuxt-link
+              :to="`/${link}`"
+              class="link cursor-pointer p-2 rounded-md md:text-xl lg:text-2xl xl:text-3xl"
+            >
               {{ link }}
             </nuxt-link>
           </div>
@@ -168,6 +167,13 @@ export default {
 </script>
 
 <style scoped>
+.links > .nuxt-link-exact-active {
+  @apply underline;
+}
+.link {
+  @apply hover:underline;
+}
+
 .light {
   @apply bg-yellow-50 text-gray-700 bg-gradient-to-r from-yellow-50 via-yellow-50 to-green-400;
 }
@@ -176,9 +182,9 @@ export default {
   @apply bg-gray-900 text-green-300;
 }
 
-.links {
+/* .links {
   @apply items-center h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12 fill-current transform hover:rotate-6 hover:scale-110;
-}
+} */
 </style>
 
 <style>

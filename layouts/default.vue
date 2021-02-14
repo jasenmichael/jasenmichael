@@ -2,7 +2,11 @@
   <div class="bg-gray-900 text-white">
     <div class="flex flex-col min-h-screen">
       <Nav />
-      <Nuxt class="pt-16 lg:pt-20 flex-grow" />
+      <Breadcrumbs
+        v-if="showOn.some((el) => $route.path.includes(el))"
+        class="pt-16 lg:pt-20"
+      />
+      <Nuxt class="flex-grow" />
       <Footer />
     </div>
   </div>
@@ -10,6 +14,11 @@
 
 <script>
 export default {
+  data: () => {
+    return {
+      showOn: ['/photos', '/blog', '/projects'],
+    }
+  },
   head() {
     return {
       script: [

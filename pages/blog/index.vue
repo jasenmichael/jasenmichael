@@ -1,15 +1,13 @@
 <template>
   <div>
-    <div class="py-14 lg:pt-32 relative max-w-7xl mx-auto">
+    <div class="py-10 relative max-w-7xl mx-auto">
       <h1
         class="text-center text-green-300 text-4xl md:text-5xl lg:text-6xl font-bold"
-      >
-        .blogs()
-      </h1>
+      ></h1>
       <!-- <pre class="text-base text-left">{{ $config.isDev }}</pre> -->
       <!-- <pre class="text-base text-left">{{ blogs }}</pre> -->
       <div
-        class="pt-10 px-2 md:px-4 max-w-lg mx-auto grid gap-5 md:grid-cols-2 lg:grid-cols-3 md:max-w-none"
+        class="px-2 md:px-4 max-w-lg mx-auto grid gap-5 md:grid-cols-2 lg:grid-cols-3 md:max-w-none"
       >
         <!--  only show not published in dev -->
         <div

@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen items-center bg-green-800">
+  <div class="min-h-screen items-center bg-green-800 mt-2">
     <div class="flex-1 md:px-2 py-2">
       <!-- <div> -->
       <transition-group
@@ -25,7 +25,7 @@
             class="w-full h-full object-cover hover:opacity-100 hover:shadow-md hover:z-30 hover:ring-2 hover:ring-gray-600 hover:scale-101 transition-all duration-1000 ease-in-out"
             :class="!image.loaded ? 'opacity-0' : 'opacity-75'"
           />
-          <div v-else class="w-full h-full bg-red-900"></div>
+          <div v-else class="w-full h-full bg-green-800"></div>
           <!-- loading="lazy" -->
         </div>
       </transition-group>
