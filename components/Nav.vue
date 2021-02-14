@@ -150,7 +150,7 @@ export default {
   data: () => {
     return {
       isMounted: false,
-      links: ['blog', 'projects', 'photos', 'contact'],
+      links: ['bio', 'projects', 'blog', 'photos'],
       scrollY: 0,
       isOpen: false,
     }

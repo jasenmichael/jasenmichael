@@ -8,6 +8,7 @@ cover: https://source.unsplash.com/collection/1346951/1000x500?sig=3
 category: technology
 tags: ['vue', 'nuxt', 'nuxt-content', 'netlify']
 author: jasenmichael
+published: false
 ---
 
 ## yoyo

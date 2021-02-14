@@ -64,8 +64,13 @@
             <a href="#" class="hover:underline"> {{ blog.author }} </a>
           </p>
           <div class="flex space-x-1 text-sm text-gray-500">
-            <time datetime="2020-03-10"> {{ formatDate(blog.updatedAt) }}</time>
-            <span aria-hidden="true"> &middot; </span>
+            <time> {{ formatDate(blog.createdAt) }}</time>
+            <span
+              v-if="!blog.published"
+              aria-hidden="true"
+              class="bg-red-600 px-2 py-1 rounded-md text-gray-100 font-black"
+              >DRAFT</span
+            >
             <!-- <ReadingTime :content="blog.body" /> -->
             <!-- <span> 4 min read </span> -->
           </div>

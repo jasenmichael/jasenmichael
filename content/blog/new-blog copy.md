@@ -5,6 +5,7 @@ cover:
 category: technology
 tags: ['vue', 'nuxt', 'nuxt-content', 'netlify']
 author: jasenmichael
+published: false
 ---
 
 ## yoyo
