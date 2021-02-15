@@ -4,7 +4,7 @@
       <Nav />
       <transition
         name="page"
-        mode="ease-in-out"
+        mode="ease-out"
         class="transition-all duration-700 ease-in-out"
       >
         <Breadcrumbs
