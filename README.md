@@ -24,6 +24,8 @@ $ npm run generate
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
 todo:
+technologies:
+html5 and semantic html, css flexbox grid animations transitions responsive design. node and javascript es6, rest apis, graphql.
 
 - [ ] complete about
 - [ ] complete blog
@@ -106,29 +108,3 @@ photos
 - caption
 
 ---
-
-sites:
-jasenmichael
-
-- header
-- https://jobs.dorfjungs.com/
-
-tech512
-
-- header
-- about
-- our services
-- contact
-- our work
-- footer
-- https://www.templatemonsterpreview.com/demo/71322.html?_gl=1*1hqwatl*_ga*MTA1MjA3NjYyMi4xNjExNzU4OTgy*_ga_FTPYEGT5LY*MTYxMTc1ODk4Mi4xLjEuMTYxMTc2MTU4OS4zNg..&_ga=2.122076936.2032882820.1611758983-1052076622.1611758982
-
-ready-builder
-
-- header
-- about
-- our services
-- contact
-- our work
-- footer
-- https://www.templatemonsterpreview.com/demo/67292.html?_gl=1*1gdd6ro*_ga*MTA1MjA3NjYyMi4xNjExNzU4OTgy*_ga_FTPYEGT5LY*MTYxMTc1ODk4Mi4xLjEuMTYxMTc2MDUzNy41MQ..&_ga=2.160283326.2032882820.1611758983-1052076622.1611758982

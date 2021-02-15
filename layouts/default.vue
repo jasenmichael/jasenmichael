@@ -2,10 +2,16 @@
   <div class="bg-gray-900 text-white">
     <div class="flex flex-col min-h-screen">
       <Nav />
-      <Breadcrumbs
-        v-if="showOn.some((el) => $route.path.includes(el))"
-        class="pt-16 lg:pt-20"
-      />
+      <transition
+        name="page"
+        mode="ease-in-out"
+        class="transition-all duration-700 ease-in-out"
+      >
+        <Breadcrumbs
+          v-if="showOn.some((el) => $route.path.includes(el))"
+          class="pt-16 lg:pt-20"
+        />
+      </transition>
       <Nuxt class="flex-grow" />
       <Footer />
     </div>
@@ -40,7 +46,20 @@ export default {
 .page-leave-active {
   opacity: 0;
   transform: translate3d(0, 15px, 0);
-
-  /* opacity: 0; */
 }
+
+/* .fade-in-enter-active {
+  transition: all 0.8s ease;
+}
+
+.fade-in-leave-active {
+  opacity: 0;
+  transform: translate3d(0, 15px, 0);
+}
+
+.fade-in-enter,
+.fade-in-leave-to {
+  position: absolute;
+  opacity: 0;
+} */
 </style>
