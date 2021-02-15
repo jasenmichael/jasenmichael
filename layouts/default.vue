@@ -2,11 +2,7 @@
   <div class="bg-gray-900 text-white">
     <div class="flex flex-col min-h-screen">
       <Nav />
-      <transition
-        name="page"
-        mode="ease-out"
-        class="transition-all duration-700 ease-in-out"
-      >
+      <transition name="page" mode="in-out">
         <Breadcrumbs
           v-if="showOn.some((el) => $route.path.includes(el))"
           class="pt-16 lg:pt-20"
