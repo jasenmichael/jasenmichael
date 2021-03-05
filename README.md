@@ -108,3 +108,41 @@ photos
 - caption
 
 ---
+
+social media posts scheduler
+
+needs a posts record or past posts
+
+runs at scheduled times - peak and late
+also runs when a new post is made
+there are 2 types of posts(for now) links(blog) and images(gallery)
+all links are pages on the site
+all images are also on the site in a gallery(category) - nerd - build - photos - art
+
+---
+
+when a post(or multiple posts) is made, or a scheduled post -> it triggers a build
+
+preBuild.js does =>
+
+- run add social_posts, adds to top of queue
+  - loads social_posts.json
+  - gets all content posts if (queued && post_to_social && !published)) && not already in social_posts
+  - add to queue
+  - change file json - queued, post_to_social, published)
+- run queue
+
+---
+
+generate post_to_social.json
+--- get all content photos with -
+--- read social.json, add tiems not already in file
+
+post -- runs prebuild post script
+---- gets all posts
+---- make post
+---- scheduler
+--- get posts only (queued && post_to_social && !published), sort by created
+--- change queued && post_to_social && published
+
+     zapier runs trigger if posts_to_social data changed
