@@ -36,7 +36,7 @@
           :data-src="
             $config.isDev
               ? selected.image
-              : `${$config.cloudinaryUrl}/${selected.image}`
+              : `${$config.cloudinaryUrl}/https://jasenmichael.com${selected.image}`
           "
           alt=""
           class="w-full h-full object-contain bg-black"
@@ -102,7 +102,7 @@
             :data-src="
               $config.isDev
                 ? image.image
-                : `${$config.cloudinaryUrl}/https://jasenmichael.com${image.image}`
+                : `${$config.cloudinaryUrl}/https://jasenmichael.com${image.imgthumb}`
             "
             alt=""
             class="w-full h-full object-cover opacity-75 hover:opacity-100 hover:shadow-md hover:z-30 transition-all duration-1000 ease-in-out"
