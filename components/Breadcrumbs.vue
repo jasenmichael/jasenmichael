@@ -10,7 +10,7 @@
       <!-- <nuxt-link to="/">HOME</nuxt-link> > {{ $route.name.toUpperCase() }} -->
       <nuxt-link to="/">HOME</nuxt-link>
       <div v-for="(path, i) in $route.path.split('/')" :key="i">
-        <nuxt-link :to="path">{{ path.toUpperCase() }} </nuxt-link>
+        <nuxt-link :to="'/' + path">{{ path.toUpperCase() }} </nuxt-link>
         <span class="text-gray-500 px-2">
           {{ i !== $route.path.split('/').length - 1 ? ' > ' : '' }}
         </span>

@@ -94,5 +94,6 @@ export default {
     isDev: process.env.NODE_ENV === 'development',
     cloudinaryUrl:
       'https://res.cloudinary.com/jasenmichael/image/fetch/c_fill/q_auto/f_auto/c_scale,w_auto:breakpoints',
+    // https://cloudinary.com/blog/responsive_images_with_srcset_sizes_and_cloudinary
   },
 }
