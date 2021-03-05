@@ -102,7 +102,7 @@
             :data-src="
               $config.isDev
                 ? image.image
-                : `${$config.cloudinaryUrl}/${image.image}`
+                : `${$config.cloudinaryUrl}/https://jasenmichael.com${image.image}`
             "
             alt=""
             class="w-full h-full object-cover opacity-75 hover:opacity-100 hover:shadow-md hover:z-30 transition-all duration-1000 ease-in-out"
