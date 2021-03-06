@@ -3,6 +3,7 @@ const fs = require('fs')
 const sharp = require('sharp')
 // const ExifImage = require('exif').ExifImage
 const exifr = require('exifr')
+const { info } = require('autoprefixer')
 const srcDir = process.argv[2]
 const publicPath = '/img/photos/'
 const destDir = 'static' + publicPath
@@ -115,24 +116,6 @@ function getImagePaths(dir) {
 
 function importImages(images) {
   images.forEach((image) => {
-    // save json
-    const data = {
-      title: '',
-      caption: '',
-      image: image.publicPath,
-      imgthumb: image.thumb,
-      gallery: false,
-      orientation: image.orientation,
-      location: image.location || null,
-      gps: image.gps || null,
-      date_taken: image.date_taken || null,
-      width: image.width,
-      height: image.height,
-      tags: [],
-      author: 'jasenmichael',
-      published: false,
-      //   data: image,
-    }
     // copy image from import to dest
     // fs.copyFileSync(image.src, image.dest)
     sharp(image.src, { failOnError: false })
@@ -144,21 +127,41 @@ function importImages(images) {
       .rotate()
       .jpeg({ quality: 80 })
       .toFile(image.dest)
+      .then((info) => {
+        // save json
+        const data = {
+          title: '',
+          caption: '',
+          image: image.publicPath,
+          imgThumb: image.thumb,
+          gallery: false,
+          // fix w-h and orientation after .rotate()
+          orientation: info.width >= info.height ? 'landscape' : 'portrait',
+          width: info.width,
+          height: info.height,
+          location: image.location || null,
+          gps: image.gps || null,
+          date_taken: image.date_taken || null,
+          tags: [],
+          author: 'jasenmichael',
+          published: false,
+          //   data: image,
+        }
+        const json = JSON.stringify(data, null, 2)
+        // copy content json
+        fs.writeFileSync(image.contentDest, json)
+      })
 
     // create thumb
     sharp(image.src, { failOnError: false })
       .withMetadata()
+      .rotate()
       .resize({
-        fit: sharp.fit.contain,
+        // fit: sharp.fit.contain,
         width: 800,
       })
-      .rotate()
       .jpeg({ quality: 70 })
       .toFile(image.thumbDest)
-
-    const json = JSON.stringify(data, null, 2)
-    // copy content json
-    fs.writeFileSync(image.contentDest, json)
   })
 }
 

@@ -25,20 +25,11 @@
             </div>
           </div>
         </div>
-        <pre>
-          {{
-            // eslint-disable-next-line vue/no-parsing-error
-            images[selected.index].height * 3 < images[selected.index].width
-          }}
-          -
-          {{ parseInt(images[selected.index].width) }}w {{
-            parseInt(images[selected.index].height)
-          }}h
-          {{
-            parseInt(images[selected.index].width) %
-            parseInt(images[selected.index].height)
-          }}</pre
-        >
+        <!-- <pre>
+          {{ images[selected.index].orientation }}
+          {{ images[selected.index].width }}w
+          {{ images[selected.index].height }}h
+        </pre> -->
 
         {{ images[selected.index].title || images[selected.index].slug }}
         <!-- <pre class="text-left">{{ images[selected.index] }}</pre> -->
@@ -104,8 +95,8 @@
             ((i === 0 || i % 6 === 1) && image.orientation === 'landscape') ||
             image.height * 3 < image.width
               ? image.height * 3 < image.width
-                ? 'col-span-3 row-span-2'
-                : 'col-span-2 row-span-2'
+                ? 'md:col-span-3'
+                : image.width >= 1200 && 'col-span-2 row-span-2'
               : image.orientation === 'portrait' && 'row-span-2'
           "
           @click.prevent="selected = { index: i, image: image.image }"
@@ -120,8 +111,8 @@
             v-lazy-load
             :data-src="
               $config.isDev
-                ? image.image
-                : `${$config.cloudinaryUrl}/https://jasenmichael.com${image.imgthumb}`
+                ? image.imgThumb
+                : `${$config.cloudinaryUrl}/https://jasenmichael.com${image.imgThumb}`
             "
             alt=""
             class="w-full h-full object-cover opacity-75 hover:opacity-100 hover:shadow-md hover:z-30 transition-all duration-1000 ease-in-out"
