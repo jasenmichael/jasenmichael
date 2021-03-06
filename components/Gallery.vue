@@ -50,9 +50,9 @@
       >
         <hr class="border-gray-600 opacity-60" />
         <!-- footer -->
-        <div>
+        <!-- <div>
           {{ images[selected.index].caption || 'yoyo' }}
-        </div>
+        </div> -->
         <div>
           Photo Taken:
           {{ dateTaken() }}

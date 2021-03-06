@@ -121,28 +121,21 @@ all images are also on the site in a gallery(category) - nerd - build - photos -
 
 ---
 
-when a post(or multiple posts) is made, or a scheduled post -> it triggers a build
+when a post(or multiple posts) is made, or a scheduled post -> it triggers a build and runs preBuild.js
 
 preBuild.js does =>
 
-- run add social_posts, adds to top of queue
-  - loads social_posts.json
-  - gets all content posts if (queued && post_to_social && !published)) && not already in social_posts
-  - add to queue
-  - change file json - queued, post_to_social, published)
+- run add social-[posts], adds to top of queue
+  - loads social-[posts].json
+  - gets all content posts if (queued && postToSocial && published)) && not already in queue (social-[posts].json)
+  - add to queue (social-[posts].json)
+  - change content file (json/md) - (!queued, !post_to_social, published)
+  - does nothing to queue if no new social-posts
 - run queue
 
 ---
 
-generate post_to_social.json
---- get all content photos with -
---- read social.json, add tiems not already in file
+zapier scheduler runs build at times
 
-post -- runs prebuild post script
----- gets all posts
----- make post
----- scheduler
---- get posts only (queued && post_to_social && !published), sort by created
---- change queued && post_to_social && published
-
-     zapier runs trigger if posts_to_social data changed
+- this will add items to queue
+  zapier posts to social media if social\_[posts].json has new items

@@ -13,5 +13,5 @@ tags: []
 author: jasenmichael
 published: false
 queued: false
-post_to_social: true
+postToSocial: true
 ---
