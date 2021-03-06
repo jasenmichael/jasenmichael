@@ -25,6 +25,21 @@
             </div>
           </div>
         </div>
+        <pre>
+          {{
+            // eslint-disable-next-line vue/no-parsing-error
+            images[selected.index].height * 3 < images[selected.index].width
+          }}
+          -
+          {{ parseInt(images[selected.index].width) }}w {{
+            parseInt(images[selected.index].height)
+          }}h
+          {{
+            parseInt(images[selected.index].width) %
+            parseInt(images[selected.index].height)
+          }}</pre
+        >
+
         {{ images[selected.index].title || images[selected.index].slug }}
         <!-- <pre class="text-left">{{ images[selected.index] }}</pre> -->
       </div>
@@ -86,12 +101,16 @@
           :key="i + 420"
           class="flex flex-cols"
           :class="
-            (i === 0 || i % 6 === 1) && image.orientation === 'landscape'
-              ? 'col-span-2 row-span-2'
+            ((i === 0 || i % 6 === 1) && image.orientation === 'landscape') ||
+            image.height * 3 < image.width
+              ? image.height * 3 < image.width
+                ? 'col-span-3 row-span-2'
+                : 'col-span-2 row-span-2'
               : image.orientation === 'portrait' && 'row-span-2'
           "
           @click.prevent="selected = { index: i, image: image.image }"
         >
+          <!-- <pre>{{ image.width }}-{{ image.height }}</pre> -->
           <!-- :class="
             image.orientation === 'landscape' ? 'col-span-2' : 'row-span-2'
           " -->
