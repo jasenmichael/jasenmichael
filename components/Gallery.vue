@@ -86,7 +86,7 @@
           :key="i + 420"
           class="flex flex-cols"
           :class="
-            (i === 0 || i % 5 === 1) && image.orientation === 'landscape'
+            (i === 0 || i % 6 === 1) && image.orientation === 'landscape'
               ? 'col-span-2 row-span-2'
               : image.orientation === 'portrait' && 'row-span-2'
           "
