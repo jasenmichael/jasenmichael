@@ -25,13 +25,14 @@
             </div>
           </div>
         </div>
-        <!-- <pre>
-          {{ images[selected.index].orientation }}
-          {{ images[selected.index].width }}w
-          {{ images[selected.index].height }}h
-        </pre> -->
-
-        {{ images[selected.index].title || images[selected.index].slug }}
+        <!-- loadmore? {{ hasScrolledToBottom || 'nope' }}
+        <br />
+        page {{ page }}
+        <br /> -->
+        {{
+          loadedImages[selected.index].title ||
+          loadedImages[selected.index].slug
+        }}
         <!-- <pre class="text-left">{{ images[selected.index] }}</pre> -->
       </div>
       <div
@@ -51,13 +52,13 @@
       <div
         class="h-32 border-gray-900 border-b-4 border-r-4 border-l-4 bg-black text-white px-4 md:px-10 lg:px-40 xl:px-52 py-6 w-full rounded-b-lg"
         :class="
-          images[selected.index].caption.length > 100 && 'overflow-scroll'
+          loadedImages[selected.index].caption.length > 100 && 'overflow-scroll'
         "
       >
         <hr class="border-gray-600 opacity-60" />
         <!-- footer -->
         <div>
-          {{ images[selected.index].caption || '' }}
+          {{ loadedImages[selected.index].caption || '' }}
         </div>
         <div>
           Photo Taken:
@@ -69,7 +70,7 @@
               rel="nofollow"
               target="_blank"
             >
-              @{{ images[selected.index].author }}
+              @{{ loadedImages[selected.index].author }}
             </a>
           </span>
         </div>
@@ -88,7 +89,9 @@
         <!-- :to="'/photos/' + image.slug" -->
 
         <div
-          v-for="(image, i) in images"
+          v-for="(image, i) in loadedImages"
+          :id="i === loadedImages.length - 4 && 'end'"
+          :ref="image.slug"
           :key="i + 420"
           class="flex flex-cols"
           :class="
@@ -123,6 +126,10 @@
           <!-- loading="lazy" -->
         </div>
       </transition-group>
+      <!-- <pre v-if="loadedImages" class="text-white">last-Y{{ docHeight }}</pre> -->
+      <!-- <pre>
+          hasScrolledToBottom {{ hasScrolledToBottom }}
+      </pre> -->
     </div>
   </div>
   <!-- </div> -->
@@ -323,15 +330,63 @@ export default {
   data: () => {
     return {
       loadedImages: [],
-      timer: 400,
       selected: null,
+      page: 0,
+      chunk: 20,
+      hasScrolledToBottom: false,
+      loadingMore: false,
     }
   },
-  computed: {},
   mounted() {
+    this.loadedImages = this.images.slice(0, this.chunk)
     document.addEventListener('keyup', this.changeImage)
+    // window.addEventListener('scroll', this.onScroll)
+    this.scroll()
+  },
+  beforeDestroy() {
+    document.removeEventListener('keyup', this.changeImage)
+    // window.removeEventListener('scroll', this.onScroll)
   },
   methods: {
+    isScrolledIntoView(el) {
+      const rect = el.getBoundingClientRect()
+      const elemTop = rect.top
+      const elemBottom = rect.bottom
+
+      const isVisible = elemTop < window.innerHeight && elemBottom >= 0
+      return isVisible
+    },
+    scroll() {
+      window.onscroll = () => {
+        const scrolledTo = document.querySelector('#end')
+
+        if (scrolledTo && this.isScrolledIntoView(scrolledTo)) {
+          // console.log('scrolled')
+          if (
+            !this.loadingMore &&
+            this.images.length !== this.loadingMore.length
+          ) {
+            this.hasScrolledToBottom = true
+            this.loadMore()
+          }
+        }
+      }
+    },
+    loadMore() {
+      this.loadingMore = true
+      setTimeout(() => {
+        this.page = this.page + 1
+        this.loadedImages = this.loadedImages.concat(
+          this.images.slice(
+            this.page * this.chunk,
+            this.page * this.chunk + this.chunk
+          )
+        )
+
+        this.hasScrolledToBottom = false
+        this.loadingMore = false
+      }, 800)
+    },
     dateTaken() {
       return new Date(
         this.images[this.selected.index].date_taken
@@ -342,10 +397,12 @@ export default {
         this.selected.index !== this.images.length - 1
           ? {
               image: this.images[this.selected.index + 1].image,
+              slug: this.images[this.selected.index + 1].slug,
               index: this.selected.index + 1,
             }
           : {
               image: this.images[0].image,
+              slug: this.images[0].slug,
               index: 0,
             } // null
     },
@@ -354,10 +411,12 @@ export default {
         this.selected.index !== 0
           ? {
               image: this.images[this.selected.index - 1].image,
+              slug: this.images[this.selected.index - 1].slug,
               index: this.selected.index - 1,
             }
           : {
               image: this.images[this.images.length - 1].image,
+              slug: this.images[this.images.length - 1].slug,
               index: this.images.length - 1,
             } // null
     },
@@ -383,6 +442,22 @@ export default {
         this.selected = null
       }
     },
+    // infiniteHandler($state) {
+    //   const newImages = images.slice(this.page * 10, 10)
+    //   // await this.$content('images')
+    //   //   .skip(this.page * 10)
+    //   //   .limit(10)
+    //   //   .fetch()
+
+    //   //
+    //   if (newImages.length) {
+    //     this.page += 1
+    //     this.loadedImages.concat(newImages)
+    //     $state.loaded()
+    //   } else {
+    //     $state.complete()
+    //   }
+    // },
   },
 }
 </script>

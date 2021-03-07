@@ -10,5 +10,11 @@ export default {
     const images = await $content('images').sortBy('date_taken', 'desc').fetch()
     return { images }
   },
+  data: () => {
+    return {
+      page: 1,
+    }
+  },
+  methods: {},
 }
 </script>
